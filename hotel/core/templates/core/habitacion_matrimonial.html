@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-12">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">Habitación Matrimonial</h1>
+            <p class="text-[var(--text-secondary)] mt-4 max-w-2xl mx-auto text-base sm:text-lg">
+                Disfrute de una estancia romántica y elegante en nuestra habitación matrimonial, diseñada para ofrecer el máximo confort a las parejas.
+            </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+            <div class="relative">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
+                    style='background-image: url("https://via.placeholder.com/800x450.png/f3f4f6/6b7280?text=Habitacion+Matrimonial");'>
+                </div>
+                <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/50 to-transparent w-full p-4">
+                    <p class="text-white text-lg font-bold">Desde 450 Bs. / noche</p>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Detalles de la Habitación Matrimonial</h3>
+                <p class="text-[var(--text-secondary)] text-sm mt-2 mb-4">
+                    Esta habitación cuenta con una espaciosa cama King size, una decoración refinada y vistas encantadoras. Es el refugio perfecto para una escapada especial en Sucre.
+                </p>
+                <button
+                    class="w-full flex items-center justify-center rounded-full h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                    <span>Reservar Ahora</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,103 +1,102 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-<main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-12">
-    <div class="max-w-7xl mx-auto">
+<main class="flex-1 bg-stone-100 py-12 sm:py-16">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">Nuestras Habitaciones
-            </h1>
-            <p class="text-[var(--text-secondary)] mt-4 max-w-2xl mx-auto text-base sm:text-lg">
-                Diseñadas para su confort y conveniencia, cada una de nuestras habitaciones ofrece una
-                experiencia única y memorable.
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-stone-900">Nuestras Habitaciones</h1>
+            <p class="text-stone-600 mt-4 max-w-3xl mx-auto text-base sm:text-lg">
+                Diseñadas para su confort y conveniencia, cada una de nuestras habitaciones ofrece una experiencia única y memorable.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
-                <div class="relative">
-                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-500 group-hover:scale-105"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDO1AignnqiCTIyvk_8FiIugI6mFWQhQ302PMLW1l70yyENpcHT8wQzPXk-l5ZEdqd_DDLbmfBWvHcKF8SKgVO7xw05k8NUKfjsKxAe_xiCr7AL3em99KJrHL1v81QdkSkyzZtNLizsvZqeCsw_IVZIf1t0SYWlKFZt6J960Yheefun2fn7BwEDwX2d-mgQ3TUvw_MXDiQUpxFIzTPCey6OB1rCoJYua1v9G2e7Fr_Q9Kein-w1Oq5MVEkSGXKipX7mOYMiWSWsWTU");'>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 bg-gradient-to-t from-black/50 to-transparent w-full p-4">
-                        <p class="text-white text-lg font-bold">Desde 350 Bs. / noche</p>
-                    </div>
+
+        <!-- Línea de fondo -->
+        <div class="absolute top-56 left-0 w-full h-32 bg-[var(--primary-color)] opacity-100 z-0"></div>
+
+        <!-- Sección de Introducción -->
+        <div class="relative z-10 mb-16 bg-white p-8 rounded-xl shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div>
+                    <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                         alt="Interior de una habitación de hotel elegante y moderna" 
+                         class="rounded-lg shadow-md w-full h-auto object-cover aspect-video">
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Habitación Estándar</h3>
-                    <p class="text-[var(--text-secondary)] text-sm mt-2 mb-4">
-                        Ideal para viajeros o parejas, esta habitación ofrece comodidad y funcionalidad con una cama matrimonial, baño privado y vistas a nuestros patios coloniales.
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-stone-800 mb-4">Un Refugio de Paz y Confort</h2>
+                    <p class="text-stone-600 leading-relaxed">
+                        En Hotel Los Tarcos, cada habitación ha sido meticulosamente diseñada para ser tu santuario personal. Aquí, la elegancia se encuentra con las comodidades modernas para garantizar un descanso inigualable. Disfruta de la tranquilidad y de un ambiente que te invita a relajarte y recargar energías.
                     </p>
-                    <button
-                        class="w-full flex items-center justify-center rounded-full h-10 px-4 bg-[var(--secondary-color)] text-[var(--text-primary)] text-sm font-medium hover:bg-gray-200 transition-colors">
-                        <span>Ver disponibilidad</span>
-                    </button>
                 </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
-                <div class="relative">
-                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-500 group-hover:scale-105"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBHAL3cWMxrfsAo4w9NCtZk727rIyHmXNye45DdHbEX0Zo85PYIour8fjI7wEKmP7Hff4DEoixe6YasNP8UBD4qhaUA1IlRHUfZl_4AZhK-wXNYzYFPSpOLedZcBGVe26OWrOhMNEiBTlTCJILz5xeF_8rkLdzVqDN5_Tc52EfixRB59RqxPcoOd9ZxuqmCZetM1rUU4wzi3_-B2Eq3rtHsfp13_qRgfCxUBBmyBPPe04d17-Rx9ZIiy2R2v-uk3iM4Y0WcqC22ws");'>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 bg-gradient-to-t from-black/50 to-transparent w-full p-4">
-                        <p class="text-white text-lg font-bold">Desde 550 Bs. / noche</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+            <!-- Habitación Simple Card -->
+            <a href="{% url 'habitacion_simple' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
                     </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Habitación Deluxe</h3>
-                    <p class="text-[var(--text-secondary)] text-sm mt-2 mb-4">
-                        Disfrute de un espacio más amplio con una cama King Size, área de estar y balcón privado con vistas panorámicas de la ciudad blanca.
+                <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
+                    <h3 class="text-xl font-bold text-stone-800">Habitación Simple</h3>
+                    <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                        Ideal para el viajero solitario, esta habitación ofrece comodidad y funcionalidad en un espacio acogedor.
                     </p>
-                    <button
-                        class="w-full flex items-center justify-center rounded-full h-10 px-4 bg-[var(--secondary-color)] text-[var(--text-primary)] text-sm font-medium hover:bg-gray-200 transition-colors">
-                        <span>Ver disponibilidad</span>
-                    </button>
-                </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
-                <div class="relative">
-                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-500 group-hover:scale-105"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0UqGjgfoBtAFEczPOjKMVDUnwNOxyIhSQPix-3jLPqgUgpJ3YH3qGij3WxXJx-bgtRpZdNCPLSVvg2XzwQ9kgSc3t3cGArh4RDA4HBIrsse8K6tVaqsrSe4a0cMvkkGRyXq_mEmWMcSUW30X0IFZR2f2y8uPkAGNgCQMDu8dhRfl109PnpwT0iHqCVXAS4s1ONvXrXsYlbLHorOEkilWwoumlXFXUTbwbFH5NLBkYvhor27vNftU-gYKDwRZmgXpi_38NpZ2gxvU");'>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 bg-gradient-to-t from-black/50 to-transparent w-full p-4">
-                        <p class="text-white text-lg font-bold">Desde 750 Bs. / noche</p>
+                    <div class="absolute bottom-0 left-0 w-full px-6 pb-4">
+                        <div class="flex justify-between items-center border-t border-stone-200 pt-3">
+                            <span class="font-bold text-sm text-stone-500">Ver Detalles</span>
+                            <span class="font-bold text-lg text-[var(--primary-color)]">250 Bs.</span>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Suite Familiar</h3>
-                    <p class="text-[var(--text-secondary)] text-sm mt-2 mb-4">
-                        Perfecta para familias, esta suite cuenta con dos habitaciones conectadas,
-                        dos baños y capacidad para hasta cuatro personas, ideal para disfrutar Sucre en familia.
+            </a>
+
+            <!-- Habitación Normal Card -->
+            <a href="{% url 'habitacion_normal' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
+                    <h3 class="text-xl font-bold text-stone-800">Habitación Normal</h3>
+                    <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                        Perfecta para parejas o amigos, con un balance ideal entre espacio, comodidad y valor.
                     </p>
-                    <button
-                        class="w-full flex items-center justify-center rounded-full h-10 px-4 bg-[var(--secondary-color)] text-[var(--text-primary)] text-sm font-medium hover:bg-gray-200 transition-colors">
-                        <span>Ver disponibilidad</span>
-                    </button>
-                </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
-                <div class="relative">
-                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-500 group-hover:scale-105"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqS5Vc8j7it7l2F1L1MLvATgr5kO5QZEsfCdcqJ7tvuGXDx5puOTU-geHdNCb8JsWhcQyvR6_N1UwDeZoWQ9lFGyc_1wQ6MAVKFNZYF7F2QsSkJqI6lnCEv42XeogRGQL4sQXJe_0mTD-mj5edqGGkuouWik_6APbHlYqJmOVx-hjR9_LAdc4saR3_LpIgg8cI6tSJ5nj9EcY2CLBpmFlXVL1ykiAxdm9L9DNNSLp5KZmMnIQUoxbIqEjuhgtzLsEpew94vqvrmvI");'>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 bg-gradient-to-t from-black/50 to-transparent w-full p-4">
-                        <p class="text-white text-lg font-bold">Desde 1200 Bs. / noche</p>
+                    <div class="absolute bottom-0 left-0 w-full px-6 pb-4">
+                        <div class="flex justify-between items-center border-t border-stone-200 pt-3">
+                            <span class="font-bold text-sm text-stone-500">Ver Detalles</span>
+                            <span class="font-bold text-lg text-[var(--primary-color)]">350 Bs.</span>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Suite Presidencial</h3>
-                    <p class="text-[var(--text-secondary)] text-sm mt-2 mb-4">
-                        La máxima expresión de lujo en Sucre, con una cama King Size, sala de estar, comedor, y terraza privada con vistas espectaculares de la ciudad.
+            </a>
+
+            <!-- Habitación Matrimonial Card -->
+            <a href="{% url 'habitacion_matrimonial' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
+                    <h3 class="text-xl font-bold text-stone-800">Habitación Matrimonial</h3>
+                    <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                        Un espacio elegante y romántico con una cama King size, ideal para una escapada especial.
                     </p>
-                    <button
-                        class="w-full flex items-center justify-center rounded-full h-10 px-4 bg-[var(--secondary-color)] text-[var(--text-primary)] text-sm font-medium hover:bg-gray-200 transition-colors">
-                        <span>Ver disponibilidad</span>
-                    </button>
+                    <div class="absolute bottom-0 left-0 w-full px-6 pb-4">
+                        <div class="flex justify-between items-center border-t border-stone-200 pt-3">
+                            <span class="font-bold text-sm text-stone-500">Ver Detalles</span>
+                            <span class="font-bold text-lg text-[var(--primary-color)]">450 Bs.</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
+
         </div>
     </div>
 </main>
 {% endblock %}
+

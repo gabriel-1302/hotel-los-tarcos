@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-12">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">Habitación Normal</h1>
+            <p class="text-[var(--text-secondary)] mt-4 max-w-2xl mx-auto text-base sm:text-lg">
+                Nuestra habitación normal es perfecta para parejas o amigos, ofreciendo un equilibrio ideal entre comodidad y valor.
+            </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+            <div class="relative">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
+                    style='background-image: url("https://via.placeholder.com/800x450.png/e5e7eb/4b5563?text=Habitacion+Normal");'>
+                </div>
+                <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/50 to-transparent w-full p-4">
+                    <p class="text-white text-lg font-bold">Desde 350 Bs. / noche</p>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Detalles de la Habitación Normal</h3>
+                <p class="text-[var(--text-secondary)] text-sm mt-2 mb-4">
+                    Equipada con dos camas individuales o una cama doble, esta habitación cuenta con un ambiente acogedor, baño privado y todas las comodidades modernas para una estancia placentera.
+                </p>
+                <button
+                    class="w-full flex items-center justify-center rounded-full h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                    <span>Reservar Ahora</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
