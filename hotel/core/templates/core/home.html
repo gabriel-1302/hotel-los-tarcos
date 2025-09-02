@@ -1,0 +1,161 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<main class="py-8 sm:py-12 md:py-16 lg:py-20">
+    <section
+        class="flex min-h-[500px] flex-col items-center justify-center gap-8 bg-cover bg-center p-6 sm:p-8 text-center text-white"
+        style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("/static/images/portada.webp");'>
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tighter">Bienvenido a Hotel
+            Los Tarcoss</h1>
+        <p class="max-w-2xl text-base sm:text-lg md:text-xl font-light">Disfrute de una estancia inolvidable en
+            nuestro acogedor hotel boutique en la histórica ciudad de Sucre. Relájese en nuestras lujosas habitaciones y explore la belleza colonial de la capital de Bolivia.</p>
+        <a href="{% url 'reservas' %}"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-red-700 transition-colors">
+            <span class="truncate">Reservar ahora</span>
+        </a>
+    </section>
+    <div class="mx-auto max-w-7xl px-4 md:px-10 lg:px-20">
+        <section class="py-12 sm:py-16">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Nuestras
+                Habitaciones</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="animate-on-scroll flex flex-col gap-4 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                    style="transition-delay: 100ms">
+                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSvFaw_jswfPoOeMQTeC6bPOrb0SJ_0uUnRo7hHyUxD3WwLOBS3AnK4Bb86kUCxtOoWPq9YabbFUANEmpVg1IrLnGzUMCBcl0cypopqmVVP8VartmzDeEC8pFDXD0ntxx_76_IoJbY8_0g0orNtSBWO6GLKpO0MY0NWQgzT2_PyvbOrtZqz2xMtXjoDz1E0_i7yQkdacqaxesGM93yWdImTELqgKsBPtddRM_PDtKVE1MQr9i67qV9TjKx-NaMTdC65dT55kNWWBQ");'>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-stone-800 text-xl font-semibold leading-normal">Habitación Estándar
+                        </h3>
+                        <p class="text-stone-500 text-base font-normal leading-normal mt-2">Cómoda y
+                            acogedora, ideal para una estancia relajante.</p>
+                    </div>
+                </div>
+                <div
+                    class="animate-on-scroll flex flex-col gap-4 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                    style="transition-delay: 200ms">
+                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD70R-goLHfjji6Wid4MFH4xVRHznoV6Klxg_IfXarF1NhKdyQ1RWipgSdfgGBOOweDztweFhPXioWdRLGj9K_29rMQ3_0Dqd-3QSo28iwBKfnh-mvjN-Bc4a5assdN_NJ-667fwsl6DobCBoQFANMU_WfyvH8CNe5KYwqkioqPrUYeIdf9HrFpZ8oTl-ZJQuE3nHQOTUrXgWNPxLtE4OSCHW37LkjI654NwMDp51P4YaCjqoKAuvxv8raO00dGkBSHevnoNfvWCnU");'>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-stone-800 text-xl font-semibold leading-normal">Habitación Deluxe
+                        </h3>
+                        <p class="text-stone-500 text-base font-normal leading-normal mt-2">Espaciosa y
+                            elegante, con vistas impresionantes.</p>
+                    </div>
+                </div>
+                <div
+                    class="animate-on-scroll flex flex-col gap-4 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                    style="transition-delay: 300ms">
+                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiSN_swEvqaYeXWQbCXk-8vpD2pm0rJRKk_Zf7Vq1oVUd5gNGc1UUC4H6TeLiWzXaO3CWLfN6n-LsJ8r8Vosy4tL3WmgbhHSi9oCE__NWSlG1XYYiv2qP1yZViXgXoUDGMfaIOBZyymJjh7mASuUAt279HgXd0iFCz50R9FiF7o9Cd9gQXqdlvahshw_IhhNkluP6nkVrkJr69IgSSBReJWDFKZcQKvNBWDgzhKNiHOpYDrrlu8OxqCTGBof1oK4GDTkfm3zwG4Y4");'>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-stone-800 text-xl font-semibold leading-normal">Suite Presidencial
+                        </h3>
+                        <p class="text-stone-500 text-base font-normal leading-normal mt-2">Lujosa y
+                            exclusiva, para una experiencia inolvidable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 sm:py-16 bg-stone-50 rounded-3xl">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Servicios
+                Destacados</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8">
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4"><svg
+                            fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M88,149.39a8,8,0,0,0,8-8V128h64v15.29a8,8,0,0,0,16,0V32a8,8,0,0,0-16,0V48H96V32a8,8,0,0,0-16,0V141.39A8,8,0,0,0,88,149.39ZM96,112V96h64v16Zm64-48V80H96V64ZM24,168a8,8,0,0,1,8-8c14.42,0,22.19,5.18,28.44,9.34C66,173.06,70.42,176,80,176s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34a8,8,0,0,1,0,16c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,178.94,137.57,176,128,176s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,178.94,41.58,176,32,176A8,8,0,0,1,24,168Zm208,40a8,8,0,0,1-8,8c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,218.94,137.57,216,128,216s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,218.94,41.58,216,32,216a8,8,0,0,1,0-16c14.42,0,22.19,5.18,28.44,9.34C66,213.06,70.42,216,80,216s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34A8,8,0,0,1,232,208Z">
+                            </path>
+                        </svg></div>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Piscina</h3>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4"><svg
+                            fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M72,88V40a8,8,0,0,1,16,0V88a8,8,0,0,1-16,0ZM216,40V224a8,8,0,0,1-16,0V176H152a8,8,0,0,1-8-8,268.75,268.75,0,0,1,7.22-56.88c9.78-40.49,28.32-67.63,53.63-78.47A8,8,0,0,1,216,40ZM200,53.9c-32.17,24.57-38.47,84.42-39.7,106.1H200ZM119.89,38.69a8,8,0,1,0-15.78,2.63L112,88.63a32,32,0,0,1-64,0l7.88-47.31a8,8,0,1,0-15.78-2.63l-8,48A8.17,8.17,0,0,0,32,88a48.07,48.07,0,0,0,40,47.32V224a8,8,0,0,0,16,0V135.32A48.07,48.07,0,0,0,128,88a8.17,8.17,0,0,0-.11-1.31Z">
+                            </path>
+                        </svg></div>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Restaurante</h3>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4"><svg
+                            fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M64,236a12,12,0,1,1-12-12A12,12,0,0,1,64,236Zm20-44a12,12,0,1,0,12,12A12,12,0,0,0,84,192Zm-64,0a12,12,0,1,0,12,12A12,12,0,0,0,20,192Zm32-32a12,12,0,1,0,12,12A12,12,0,0,0,52,160ZM256,40a8,8,0,0,1-8,8H219.31L191.46,75.86,169.8,202.65a16,16,0,0,1-27.09,8.66l-98-98a16,16,0,0,1,8.69-27.1L180.14,64.54,208,36.69A15.86,15.86,0,0,1,219.31,32H248A8,8,0,0,1,256,40ZM174.21,81.79,56,102l98,98Z">
+                            </path>
+                        </svg></div>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Spa</h3>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4"><svg
+                            fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z">
+                            </path>
+                        </svg></div>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Wi-Fi Gratuito</h3>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 sm:py-16">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Nuestra Ubicación en Sucre</h2>
+            <div class="aspect-video w-full rounded-3xl overflow-hidden shadow-lg">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15085.906203094122!2d-65.28031332268398!3d-19.042773999999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93fbcff60e823d01%3A0xde07e9d90c28266b!2sHotel%20Los%20Tarcoss!5e0!3m2!1ses-419!2sbo!4v1756672306533!5m2!1ses-419!2sbo" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <section class="py-12 sm:py-16">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800">Contacto</h2>
+                <p class="mt-2 text-lg text-stone-600">¿Tiene alguna pregunta? Envíenos un mensaje.</p>
+            </div>
+            <form class="mx-auto mt-12 max-w-xl">
+                <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-semibold leading-6 text-stone-900"
+                            for="name">Nombre</label>
+                        <div class="mt-2.5">
+                            <input
+                                class="block w-full rounded-full border-0 px-4 py-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
+                                id="name" name="name" placeholder="Su nombre completo" type="text" />
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-semibold leading-6 text-stone-900"
+                            for="email">Correo electrónico</label>
+                        <div class="mt-2.5">
+                            <input
+                                class="block w-full rounded-full border-0 px-4 py-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
+                                id="email" name="email" placeholder="Su correo electrónico" type="email" />
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-semibold leading-6 text-stone-900"
+                            for="message">Mensaje</label>
+                        <div class="mt-2.5">
+                            <textarea
+                                class="block w-full rounded-3xl border-0 px-4 py-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
+                                id="message" name="message" placeholder="Su mensaje o consulta" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <button
+                        class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-red-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                        type="submit">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+{% endblock %}

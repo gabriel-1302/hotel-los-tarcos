@@ -1,0 +1,152 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.packages-container {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.package-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.package-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.package-card .card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.package-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color, #9d30ce);
+}
+
+.package-card .card-text {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.package-card .list-group-item {
+    border: none;
+    padding-left: 0;
+    color: #495057;
+}
+
+.package-card .price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #343a40;
+    margin-top: auto;
+}
+
+.package-card .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+.package-card .btn-reservar {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+</style>
+
+<div class="packages-container">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 mb-4">Paquetes y Ofertas Especiales</h2>
+            <p class="text-lg sm:text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+                Descubre nuestras ofertas exclusivas diseñadas para que tu estancia en Sucre sea inolvidable.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Paquete Romántico -->
+            <div class="package-card">
+                <img src="https://picsum.photos/id/102/600/400" class="card-img-top" alt="Paquete Romántico">
+                <div class="card-body">
+                    <h3 class="card-title">Paquete Romántico</h3>
+                    <p class="card-text">Una escapada perfecta para dos, llena de detalles que enamoran y crean recuerdos imborrables.</p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">Habitación de lujo con decoración especial</li>
+                        <li class="list-group-item">Botella de vino y chocolates</li>
+                        <li class="list-group-item">Cena romántica para dos</li>
+                        <li class="list-group-item">Desayuno en la habitación</li>
+                    </ul>
+                    <div class="text-center mb-4">
+                        <p class="price">$199 <span>/ noche</span></p>
+                    </div>
+                    <a href="{% url 'reservas' %}" class="btn-reservar ripple-effect flex items-center justify-center rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                        Reservar Ahora
+                    </a>
+                </div>
+            </div>
+
+            <!-- Aventura Colonial -->
+            <div class="package-card">
+                <img src="https://picsum.photos/id/1043/600/400" class="card-img-top" alt="Aventura Colonial">
+                <div class="card-body">
+                    <h3 class="card-title">Aventura Colonial</h3>
+                    <p class="card-text">Sumérgete en la rica historia y cultura de la ciudad blanca de Bolivia con este paquete todo incluido.</p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">3 noches de alojamiento</li>
+                        <li class="list-group-item">Desayuno buffet diario</li>
+                        <li class="list-group-item">City tour guiado por el centro histórico</li>
+                        <li class="list-group-item">Entradas a museos principales</li>
+                    </ul>
+                    <div class="text-center mb-4">
+                        <p class="price">$299 <span>/ paquete</span></p>
+                    </div>
+                    <a href="{% url 'reservas' %}" class="btn-reservar ripple-effect flex items-center justify-center rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                        Reservar Ahora
+                    </a>
+                </div>
+            </div>
+
+            <!-- Escape de Fin de Semana -->
+            <div class="package-card">
+                <img src="https://picsum.photos/id/1059/600/400" class="card-img-top" alt="Escape de Fin de Semana">
+                <div class="card-body">
+                    <h3 class="card-title">Escape de Fin de Semana</h3>
+                    <p class="card-text">Relájate y recarga energías con una escapada de fin de semana en nuestro oasis de tranquilidad.</p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">2 noches (Viernes a Domingo)</li>
+                        <li class="list-group-item">Desayuno buffet</li>
+                        <li class="list-group-item">Acceso a la piscina y áreas húmedas</li>
+                        <li class="list-group-item">Late check-out (sujeto a disponibilidad)</li>
+                    </ul>
+                    <div class="text-center mb-4">
+                        <p class="price">$159 <span>/ paquete</span></p>
+                    </div>
+                    <a href="{% url 'reservas' %}" class="btn-reservar ripple-effect flex items-center justify-center rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                        Reservar Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.gallery-container {
+    padding: 2rem 0;
+}
+
+.gallery-grid {
+    column-count: 3;
+    column-gap: 1rem;
+}
+
+.gallery-item {
+    margin-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        column-count: 1;
+    }
+}
+</style>
+
+<div class="container gallery-container">
+    <h2 class="text-center mb-5">Galería de Fotos</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1015/800/1200" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1015/400/600" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1016/1200/800" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1016/600/400" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1018/800/1200" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1018/400/600" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1019/1200/800" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1019/600/400" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1020/800/1200" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1020/400/600" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1021/1200/800" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1021/600/400" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1022/800/1200" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1022/400/600" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1023/1200/800" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1023/600/400" class="img-fluid">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/id/1024/800/1200" data-toggle="lightbox" data-gallery="gallery">
+                <img src="https://picsum.photos/id/1024/400/600" class="img-fluid">
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
