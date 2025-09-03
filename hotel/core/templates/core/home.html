@@ -8,8 +8,6 @@
         style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("{% static 'images/portada2.webp' %}");'>
         <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tighter">
             Los Tarcoss Hotel</h1>
-        <p class="max-w-2xl text-base sm:text-lg md:text-xl font-light">Disfrute de una estancia inolvidable en
-            nuestro acogedor hotel boutique en la histórica ciudad de Sucre. Relájese en nuestras lujosas habitaciones y explore la belleza colonial de la capital de Bolivia.</p>
         <a href="{% url 'reservas' %}"
             class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-purple-800 transition-colors">
             <span class="truncate">Reservar ahora</span>
@@ -19,47 +17,29 @@
         <section class="py-12 sm:py-16">
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Nuestras
                 Habitaciones</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div
-                    class="animate-on-scroll flex flex-col gap-4 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-                    style="transition-delay: 100ms">
-                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSvFaw_jswfPoOeMQTeC6bPOrb0SJ_0uUnRo7hHyUxD3WwLOBS3AnK4Bb86kUCxtOoWPq9YabbFUANEmpVg1IrLnGzUMCBcl0cypopqmVVP8VartmzDeEC8pFDXD0ntxx_76_IoJbY8_0g0orNtSBWO6GLKpO0MY0NWQgzT2_PyvbOrtZqz2xMtXjoDz1E0_i7yQkdacqaxesGM93yWdImTELqgKsBPtddRM_PDtKVE1MQr9i67qV9TjKx-NaMTdC65dT55kNWWBQ");'>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-stone-800 text-xl font-semibold leading-normal">Habitación Estándar
-                        </h3>
-                        <p class="text-stone-500 text-base font-normal leading-normal mt-2">Cómoda y
-                            acogedora, ideal para una estancia relajante.</p>
-                    </div>
+            <main class="page-content">
+                <div class="card">
+                  <div class="content">
+                    <h2 class="title">Habitación Simple</h2>
+                    <p class="copy">Cómoda y acogedora, ideal para una estancia relajante.</p>
+                    <a href="{% url 'habitacion_simple' %}" class="btn">Ver detalles</a>
+                  </div>
                 </div>
-                <div
-                    class="animate-on-scroll flex flex-col gap-4 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-                    style="transition-delay: 200ms">
-                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD70R-goLHfjji6Wid4MFH4xVRHznoV6Klxg_IfXarF1NhKdyQ1RWipgSdfgGBOOweDztweFhPXioWdRLGj9K_29rMQ3_0Dqd-3QSo28iwBKfnh-mvjN-Bc4a5assdN_NJ-667fwsl6DobCBoQFANMU_WfyvH8CNe5KYwqkioqPrUYeIdf9HrFpZ8oTl-ZJQuE3nHQOTUrXgWNPxLtE4OSCHW37LkjI654NwMDp51P4YaCjqoKAuvxv8raO00dGkBSHevnoNfvWCnU");'>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-stone-800 text-xl font-semibold leading-normal">Habitación Deluxe
-                        </h3>
-                        <p class="text-stone-500 text-base font-normal leading-normal mt-2">Espaciosa y
-                            elegante, con vistas impresionantes.</p>
-                    </div>
+                <div class="card">
+                  <div class="content">
+                    <h2 class="title">Normal</h2>
+                    <p class="copy">Espaciosa y elegante, con vistas impresionantes.</p>
+                    <a href="{% url 'habitacion_normal' %}" class="btn">Ver detalles</a>
+                  </div>
                 </div>
-                <div
-                    class="animate-on-scroll flex flex-col gap-4 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-                    style="transition-delay: 300ms">
-                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiSN_swEvqaYeXWQbCXk-8vpD2pm0rJRKk_Zf7Vq1oVUd5gNGc1UUC4H6TeLiWzXaO3CWLfN6n-LsJ8r8Vosy4tL3WmgbhHSi9oCE__NWSlG1XYYiv2qP1yZViXgXoUDGMfaIOBZyymJjh7mASuUAt279HgXd0iFCz50R9FiF7o9Cd9gQXqdlvahshw_IhhNkluP6nkVrkJr69IgSSBReJWDFKZcQKvNBWDgzhKNiHOpYDrrlu8OxqCTGBof1oK4GDTkfm3zwG4Y4");'>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-stone-800 text-xl font-semibold leading-normal">Suite Presidencial
-                        </h3>
-                        <p class="text-stone-500 text-base font-normal leading-normal mt-2">Lujosa y
-                            exclusiva, para una experiencia inolvidable.</p>
-                    </div>
+                <div class="card">
+                  <div class="content">
+                    <h2 class="title">Matrimonial</h2>
+                    <p class="copy">Lujosa y exclusiva, para una experiencia inolvidable.</p>
+                    <a href="{% url 'habitacion_matrimonial' %}" class="btn">Ver detalles</a>
+                  </div>
                 </div>
-            </div>
+            </main>
         </section>
         <section class="py-12 sm:py-16 bg-stone-50 rounded-3xl">
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Servicios
