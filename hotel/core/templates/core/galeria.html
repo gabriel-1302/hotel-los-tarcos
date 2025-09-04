@@ -3,95 +3,195 @@
 
 {% block content %}
 <style>
-.gallery-container {
-    padding: 2rem 0;
-}
-
-.gallery-grid {
-    column-count: 3;
-    column-gap: 1rem;
-}
-
-.gallery-item {
-    margin-bottom: 1rem;
-    display: inline-block;
-    width: 100%;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-@media (max-width: 992px) {
-    .gallery-grid {
-        column-count: 2;
+    html { 
+        background: black; 
     }
-}
-
-@media (max-width: 576px) {
-    .gallery-grid {
-        column-count: 1;
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 2px;
+        grid-auto-rows: min-max(80px, auto);
+        grid-auto-flow: dense;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
     }
-}
+    
+    .card { 
+        min-height: 100px; 
+        background-size: cover; 
+        background-position: 50% 50%;
+        cursor: pointer;
+    }
+    
+    .span-2 { 
+        grid-column-end: span 2; 
+        grid-row-end: span 2; 
+        min-height: 200px; 
+    }
+    
+    .span-3 { 
+        grid-column-end: span 3; 
+        grid-row-end: span 3; 
+        min-height: 400px; 
+    }
+
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
 </style>
 
-<div class="container gallery-container">
-    <h2 class="text-center mb-5">Galería de Fotos</h2>
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1015/800/1200" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1015/400/600" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1016/1200/800" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1016/600/400" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1018/800/1200" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1018/400/600" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1019/1200/800" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1019/600/400" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1020/800/1200" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1020/400/600" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1021/1200/800" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1021/600/400" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1022/800/1200" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1022/400/600" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1023/1200/800" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1023/600/400" class="img-fluid">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="https://picsum.photos/id/1024/800/1200" data-toggle="lightbox" data-gallery="gallery">
-                <img src="https://picsum.photos/id/1024/400/600" class="img-fluid">
-            </a>
-        </div>
-    </div>
+<div class="grid" id="imageGrid">
+    <!-- Las imágenes se generarán aquí con JavaScript -->
 </div>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
+
+
+<script>
+    // Función de selección aleatoria ponderada
+    function weightedRand(spec) {
+        var i, sum = 0, r = Math.random();
+        for (i in spec) {
+            sum += spec[i];
+            if (r <= sum) return i;
+        }
+    };
+
+    var imageNames = {{ image_names|safe }};
+    var gridContainer = document.getElementById('imageGrid');
+    var imageUrls = [];
+    var currentImageIndex;
+
+    // Generar el grid
+    for (var i = 0; i < imageNames.length; i++) {
+        var span = weightedRand({1: 0.7, 2: 0.2, 3: 0.1});
+        var imageName = imageNames[i];
+        var url = "{% static 'images/' %}" + imageName;
+        imageUrls.push(url);
+        
+        var div = document.createElement('div');
+        div.style.backgroundImage = "url(" + url + ")";
+        div.className = 'card span-' + span;
+        div.setAttribute('data-index', i);
+        
+        div.onclick = function() {
+            openModal(parseInt(this.getAttribute('data-index')));
+        };
+        
+        gridContainer.appendChild(div);
+    }
+
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var span = document.getElementsByClassName("close")[0];
+    var prev = document.getElementsByClassName("prev")[0];
+    var next = document.getElementsByClassName("next")[0];
+
+    function openModal(index) {
+        currentImageIndex = index;
+        modal.style.display = "block";
+        modalImg.src = imageUrls[currentImageIndex];
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    span.onclick = closeModal;
+
+    prev.onclick = function() {
+        currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
+        modalImg.src = imageUrls[currentImageIndex];
+    }
+
+    next.onclick = function() {
+        currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+        modalImg.src = imageUrls[currentImageIndex];
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+        if (event.key === 'ArrowLeft') {
+            prev.onclick();
+        }
+        if (event.key === 'ArrowRight') {
+            next.onclick();
+        }
+    });
+</script>
 {% endblock %}
