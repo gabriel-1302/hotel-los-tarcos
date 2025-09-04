@@ -48,7 +48,7 @@
       content="https://lh3.googleusercontent.com/aida-public/AB6AXuDrVn8MLSN5GWfKMSLe6rfbFLm2A_V4hDp4NXwlw4RWeTqQevjPxmyZZdt3J16Ec74rXag8h3GgQTA_z6Ah8l-7cG0bUaDyz0R8j0RXuLKZty8q-gC39UKoZyNTy00vwpCCjKcGAohFgDFBj8caoarubNUQlpzBKFvRXSc3nKtEUASwBrDgK3IiseD9UQP9OkJyIvHBEXvLGsC_amJXtqrldHccT-iB5AUR-FLzSCDn2WwKc3vhYUGDR1b1Gcg4yNqPjTmcx0ezLq8"
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <style type="text/tailwindcss">
+<style type="text/tailwindcss">
       :root {
         --primary-color: #9d30ce;
       }
@@ -127,6 +127,7 @@
       .nav-link:hover::before {
         left: 0;
       }
+      
 
       /* Animación del botón reservar */
       .btn-reservar {
@@ -134,6 +135,9 @@
         overflow: hidden;
         transform-style: preserve-3d;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
       }
 
       .btn-reservar::before {
@@ -159,6 +163,8 @@
       .btn-reservar:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(157, 48, 206, 0.3);
+        background-color: var(--primary-color);
+        color: white;
       }
 
       /* Animación del header al hacer scroll */
@@ -201,6 +207,7 @@
         width: 300px;
         height: 300px;
       }
+
     </style>
     <style>
       @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
@@ -308,6 +315,10 @@
       .page-content .card:nth-child(3):before {
         background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiSN_swEvqaYeXWQbCXk-8vpD2pm0rJRKk_Zf7Vq1oVUd5gNGc1UUC4H6TeLiWzXaO3CWLfN6n-LsJ8r8Vosy4tL3WmgbhHSi9oCE__NWSlG1XYYiv2qP1yZViXgXoUDGMfaIOBZyymJjh7mASuUAt279HgXd0iFCz50R9FiF7o9Cd9gQXqdlvahshw_IhhNkluP6nkVrkJr69IgSSBReJWDFKZcQKvNBWDgzhKNiHOpYDrrlu8OxqCTGBof1oK4GDTkfm3zwG4Y4");
       }
+      .page-content .card{
+          border-radius: 0.5rem;
+      }
+    
 
       .page-content .content {
         position: relative;
@@ -324,6 +335,13 @@
         margin-top: 1rem;
       }
 
+      .page-content .title,
+      .page-content .copy, 
+      .page-content .btn
+      {
+        font-family: 'Source Serif Pro', serif;
+      }
+
       .page-content .title {
         font-size: 1.3rem;
         font-weight: bold;
@@ -331,7 +349,6 @@
       }
 
       .page-content .copy {
-        font-family: var(--font-serif);
         font-size: 1.125rem;
         font-style: italic;
         line-height: 1.35;
@@ -348,11 +365,13 @@
         color: white;
         background-color: black;
         border: none;
+        border-radius: 0.5rem;
       }
 
       .page-content .btn:hover {
         background-color: #1a1a1a;
       }
+
 
       .page-content .btn:focus {
         outline: 1px dashed yellow;
@@ -409,10 +428,9 @@
       }
     </style>
   </head>
-  <body class="bg-stone-50">
+  <body class="bg-stone-50" style="font-family: 'Source Serif Pro', serif">
     <div
       class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
-      style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
     >
       <div class="layout-container flex h-full grow flex-col">
         <header
@@ -475,7 +493,7 @@
             <div class="hidden sm:flex items-center gap-4">
               <a
                 href="{% url 'reservas' %}"
-                class="btn-reservar ripple-effect flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-4 sm:px-6 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-200 shadow-sm"
+                class="btn-reservar ripple-effect flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 sm:h-10 px-4 sm:px-6 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-200 shadow-sm"
               >
                 <span class="truncate relative z-10">Reservar</span>
               </a>
