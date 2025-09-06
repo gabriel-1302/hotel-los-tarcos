@@ -7,7 +7,8 @@
         class="flex min-h-[500px] flex-col items-center justify-center gap-8 bg-cover bg-center p-6 sm:p-8 text-center text-white"
         style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("{% static 'images/portada2.webp' %}");'>
         <h1 class="font-['Source_Serif_Pro'] text-3xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight">
-            Los Tarcoss Hotel
+            <span>Los Tarcoss</span><br>
+            <span class="text-2xl sm:text-4xl md:text-5xl font-normal">Hotel</span>
         </h1>
 
         <a href="{% url 'reservas' %}" 
@@ -24,12 +25,10 @@
         <div class="md:w-1/2 text-left">
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 mb-4">¿Quiénes somos?</h2>
             <p class="text-lg text-stone-700 mb-4">
-                Los Tarcoss Hotel es un refugio de hospitalidad en el corazón de Sucre, fundado en 1995 por la familia Tarcos. 
-                Nuestro hotel combina tradición y modernidad, ofreciendo a nuestros huéspedes una experiencia cálida y confortable.
+                Bienvenido al Hotel Los Tarcoss, un refugio de elegancia y confort en el corazón de Sucre, Bolivia. Nuestro nombre rinde homenaje al emblemático árbol tarco, cuya vibrante presencia adorna las calles y paisajes de esta histórica ciudad, simbolizando arraigo y belleza natural.
             </p>
             <p class="text-lg text-stone-700">
-                A lo largo de los años, hemos sido reconocidos por nuestro servicio personalizado y atención al detalle. 
-                Descubre la historia, el encanto y la dedicación que nos han convertido en uno de los hoteles más emblemáticos de la ciudad.
+                 En Los Tarcoss, combinamos la calidez de la hospitalidad boliviana con instalaciones modernas para ofrecerte una experiencia inolvidable, perfecta para explorar la rica cultura y el encanto colonial de Sucre.
             </p>
         </div>
         <div class="md:w-1/2 flex justify-center"> 
@@ -44,8 +43,9 @@
 
     <div class="mx-auto max-w-7xl px-4 md:px-10 lg:px-20">
         <section class="py-12 sm:py-16">
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Nuestras
-                Habitaciones</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">
+                <span class="text-xl sm:text-2xl font-normal">Nuestras</span></br> Habitaciones
+            </h2>
             <main class="page-content">
                 <div class="card">
                   <div class="content">
@@ -78,53 +78,48 @@
         </section>
 
         <section class="py-12 sm:py-16 bg-stone-50 rounded-lg">
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Servicios Destacados</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">
+                <span class="text-xl sm:text-2xl font-normal">Nuestros</span></br> Servicios
+            </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 px-8">
                 <div class="flex flex-col items-center text-center gap-4">
-                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4">
-                        <svg fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M88,149.39a8,8,0,0,0,8-8V128h64v15.29a8,8,0,0,0,16,0V32a8,8,0,0,0-16,0V48H96V32a8,8,0,0,0-16,0V141.39A8,8,0,0,0,88,149.39ZM96,112V96h64v16Zm64-48V80H96V64ZM24,184a8,8,0,0,1,8-8H48a8,8,0,0,1,0,16H32A8,8,0,0,1,24,184Zm40,0a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,184Zm40,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H112A8,8,0,0,1,104,184Zm40,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H152A8,8,0,0,1,144,184Zm40,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H192A8,8,0,0,1,184,184Zm40,0a8,8,0,0,1-8,8H208a8,8,0,0,1,0-16h16A8,8,0,0,1,224,184Z"></path>
-                        </svg>
+                    <div class="bg-[var(--primary-color)] text-white rounded-full w-12 h-12 flex items-center justify-center">
+                        <i class="fa-solid fa-square-parking text-xl"></i>
+                    </div>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Garaje</h3>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div class="bg-[var(--primary-color)] text-white rounded-full w-12 h-12 flex items-center justify-center">
+                        <i class="fas fa-wifi text-xl"></i>
+                    </div>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Wi-Fi</h3>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div class="bg-[var(--primary-color)] text-white rounded-full w-12 h-12 flex items-center justify-center">
+                        <i class="fa-solid fa-building-lock text-xl"></i>
+                    </div>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Cámaras</h3>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div class="bg-[var(--primary-color)] text-white rounded-full w-12 h-12 flex items-center justify-center">
+                        <i class="fa-solid fa-mug-saucer text-xl"></i>
                     </div>
                     <h3 class="text-stone-800 text-lg font-bold leading-tight">Desayuno</h3>
                 </div>
                 <div class="flex flex-col items-center text-center gap-4">
-                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4">
-                        <svg fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M216,72H40A16,16,0,0,0,24,88V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM40,88H216V200H40ZM112,40a8,8,0,0,0,8,8h16a8,8,0,0,0,0-16H120A8,8,0,0,0,112,40Z"></path>
-                        </svg>
+                    <div class="bg-[var(--primary-color)] text-white rounded-full w-12 h-12 flex items-center justify-center">
+                        <i class="fa-solid fa-people-group text-xl"></i>
                     </div>
-                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Smart TV</h3>
-                </div>
-                <div class="flex flex-col items-center text-center gap-4">
-                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4">
-                        <svg fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M248,152H232V128a16,16,0,0,0-16-16H40a16,16,0,0,0-16,16v24H8a8,8,0,0,0,0,16H24v48a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V168h16a8,8,0,0,0,0-16ZM216,216H40V128H216ZM176,56V40a8,8,0,0,0-16,0V56a8,8,0,0,0,16,0ZM144,56V40a8,8,0,0,0-16,0V56a8,8,0,0,0,16,0ZM112,56V40a8,8,0,0,0-16,0V56a8,8,0,0,0,16,0ZM80,56V40a8,8,0,0,0-16,0V56a8,8,0,0,0,16,0Z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Ducha Caliente</h3>
-                </div>
-                <div class="flex flex-col items-center text-center gap-4">
-                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4">
-                        <svg fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87A8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-stone-800 text-lg font-bold leading-tight">WiFi</h3>
-                </div>
-                <div class="flex flex-col items-center text-center gap-4">
-                    <div class="bg-[var(--primary-color)] text-white rounded-full p-4">
-                        <svg fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M240,96H224V88a16,16,0,0,0-16-16H48A16,16,0,0,0,32,88v8H16a8,8,0,0,0,0,16H32V224a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V112h16a8,8,0,0,0,0-16ZM48,88H208v8H48ZM208,224H48V112H208ZM184,48V32a8,8,0,0,0-16,0V48a8,8,0,0,0,16,0ZM152,48V32a8,8,0,0,0-16,0V48a8,8,0,0,0,16,0ZM120,48V32a8,8,0,0,0-16,0V48a8,8,0,0,0,16,0ZM88,48V32a8,8,0,0,0-16,0V48a8,8,0,0,0,16,0Z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Garaje</h3>
+                    <h3 class="text-stone-800 text-lg font-bold leading-tight">Salón</h3>
                 </div>
             </div>
         </section>
 
         <section class="py-12 sm:py-16">
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">Nuestra Ubicación en Sucre</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 text-center mb-12">
+                <span class="text-xl sm:text-2xl font-normal">Nuestra</span></br> Ubicación</br>
+                <span class="text-xl sm:text-2xl font-normal">en Sucre</span>
+            </h2>
             <div class="aspect-video w-full rounded-lg overflow-hidden shadow-lg">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15085.906203094122!2d-65.28031332268398!3d-19.042773999999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93fbcff60e823d01%3A0xde07e9d90c28266b!2sHotel%20Los%20Tarcoss!5e0!3m2!1ses-419!2sbo!4v1756672306533!5m2!1ses-419!2sbo" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
