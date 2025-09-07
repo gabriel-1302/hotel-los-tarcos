@@ -1,6 +1,9 @@
 from django.shortcuts import render
 import os
 from django.conf import settings
+from django.http import JsonResponse
+from django.conf import settings
+import requests
 
 # Create your views here.
 def home(request):
@@ -23,15 +26,67 @@ def galeria(request):
 def paquetes(request):
     return render(request, 'core/paquetes.html')
 
-def habitacion_simple(request):
-    return render(request, 'core/habitacion_simple.html')
 
-def habitacion_normal(request):
-    return render(request, 'core/habitacion_normal.html')
+#Habitaciones
+
+def habitacion_individual(request):
+    return render(request, 'core/habitacion_individual.html')
+
+def habitacion_doble(request):
+    return render(request, 'core/habitacion_doble.html')
 
 def habitacion_matrimonial(request):
     return render(request, 'core/habitacion_matrimonial.html')
 
+def habitacion_triple(request):
+    return render(request, 'core/habitacion_triple.html')
 
-# def home_en(request):
-#     return render(request, 'core/base_en.html')
+def habitacion_cuadruple(request):
+    return render(request, 'core/habitacion_cuadruple.html')
+
+def habitacion_quintuple(request):
+    return render(request, 'core/habitacion_quintuple.html')
+
+def habitacion_sextuple(request):
+    return render(request, 'core/habitacion_sextuple.html')
+
+def habitacion_septuple(request):
+    return render(request, 'core/habitacion_septuple.html')
+
+
+#MAPS COMENTARIOS
+def get_google_reviews(request):
+    if not hasattr(settings, 'GOOGLE_MAPS_API_KEY'):
+        return JsonResponse({
+            'success': False,
+            'error': 'API key not configured'
+        })
+    
+    url = "https://maps.googleapis.com/maps/api/place/details/json"
+    
+    params = {
+        'place_id': "ChIJAT2CDvbP-5MRayYoDNnpB94",
+        'fields': 'name,rating,user_ratings_total,reviews',
+        'key': settings.GOOGLE_MAPS_API_KEY,
+        'language': 'es'
+    }
+    
+    try:
+        response = requests.get(url, params=params)
+        data = response.json()
+        
+        if data.get('status') == 'OK':
+            return JsonResponse({
+                'success': True,
+                'data': data['result']
+            })
+        else:
+            return JsonResponse({
+                'success': False,
+                'error': data.get('status')
+            })
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        })
