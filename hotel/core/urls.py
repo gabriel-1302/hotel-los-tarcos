@@ -3,13 +3,25 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    #path('en/', views.home_en, name='home_en'),
+
     path('habitaciones/', views.habitaciones, name='habitaciones'),
-    path('habitaciones/simple/', views.habitacion_simple, name='habitacion_simple'),
-    path('habitaciones/normal/', views.habitacion_normal, name='habitacion_normal'),
+
+
+    path('habitaciones/individual/', views.habitacion_individual, name='habitacion_individual'),
+    path('habitaciones/doble/', views.habitacion_doble, name='habitacion_doble'),
     path('habitaciones/matrimonial/', views.habitacion_matrimonial, name='habitacion_matrimonial'),
+    path('habitaciones/triple/', views.habitacion_triple, name='habitacion_triple'),
+    path('habitaciones/cuadruple/', views.habitacion_cuadruple, name='habitacion_cuadruple'),
+    path('habitaciones/quintuple/', views.habitacion_quintuple, name='habitacion_quintuple'),
+    path('habitaciones/sextuple/', views.habitacion_sextuple, name='habitacion_sextuple'),
+    path('habitaciones/septuple/', views.habitacion_septuple, name='habitacion_septuple'),
+
+
+
     path('servicios/', views.servicios, name='servicios'),
     path('reservas/', views.reservas, name='reservas'),
     path('galeria/', views.galeria, name='galeria'),
     path('paquetes/', views.paquetes, name='paquetes'),
+
+    path('api/google-reviews/', views.get_google_reviews, name='google_reviews'),
 ]
