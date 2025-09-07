@@ -21,25 +21,72 @@
     </section>
 
     <!-- Sección: Historia del hotel con fondo similar a servicios -->
-    <section class="flex flex-col md:flex-row items-center justify-between gap-12 py-12 md:py-20 max-w-7xl mx-auto px-4 md:px-10 lg:px-20 bg-stone-50 rounded-lg shadow mt-8">
-        <div class="md:w-1/2 text-left">
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-800 mb-4">¿Quiénes somos?</h2>
+    <section class="relative flex flex-col md:flex-row items-center justify-between gap-12 py-16 md:py-20 max-w-7xl mx-auto px-6 md:px-10 lg:px-20 rounded-lg shadow-xl mt-8 overflow-hidden">
+        
+        <!-- Contenido principal -->
+        <div class="relative z-10 md:w-1/2 text-left">
+            <div class="mb-6">
+                <div class="inline-block bg-purple-100/90 backdrop-blur-sm text-purple-700 text-sm font-medium px-4 py-2 rounded-full mb-4 shadow-sm">
+                    Conoce nuestra historia
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-stone-800 mb-6">¿Quiénes somos?</h2>
+            </div>
             <p class="text-lg text-stone-700 mb-4">
-                Bienvenido al Hotel Los Tarcoss, un refugio de elegancia y confort en el corazón de Sucre, Bolivia. Nuestro nombre rinde homenaje al emblemático árbol tarco, cuya vibrante presencia adorna las calles y paisajes de esta histórica ciudad, simbolizando arraigo y belleza natural.
+                Bienvenido al <b>Los Tarcoss Hotel</b>, un refugio de elegancia y confort en el corazón de Sucre, Bolivia. Nuestro nombre rinde homenaje al emblemático árbol <b>Tarco</b>, cuya vibrante presencia adorna las calles y paisajes de esta histórica ciudad, simbolizando arraigo y belleza natural.
             </p>
             <p class="text-lg text-stone-700">
-                 En Los Tarcoss, combinamos la calidez de la hospitalidad boliviana con instalaciones modernas para ofrecerte una experiencia inolvidable, perfecta para explorar la rica cultura y el encanto colonial de Sucre.
+                En Los Tarcoss, combinamos la calidez de la hospitalidad boliviana con instalaciones modernas para ofrecerte una experiencia inolvidable, perfecta para explorar la rica cultura y el encanto colonial de Sucre.
             </p>
         </div>
-        <div class="md:w-1/2 flex justify-center"> 
-            <div class="p-[3px] rounded-lg bg-purple-200/100 shadow-md">
-                <img src="{% static 'images/fachada.webp' %}" 
-                alt="Hotel Los Tarcoss" 
-                class="rounded-lg w-full max-w-md object-cover" />
+                 
+        <div class="relative z-10 md:w-1/2 flex justify-center">
+            <div class="relative group">
+                <div class="relative p-[4px] rounded-2xl">
+                    <img src="{% static 'images/fachada_2.webp'%}"
+                          alt="Hotel Los Tarcoss"
+                          class="rounded-2xl w-full max-w-md object-cover shadow-lg" />
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+                            <p class="text-stone-800 font-semibold text-sm">Los Tarcoss Hotel</p>
+                            <p class="text-stone-600 text-xs">Sucre, Bolivia</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- Fin sección historia -->
+    <section class="relative max-w-7xl mx-auto px-6 md:px-10 lg:px-20 mt-8">
+        <div class="relative rounded-sm shadow-xl overflow-hidden py-8 px-8">
+            
+            <!-- Imagen de fondo del árbol tarco -->
+            <div class="absolute inset-0 z-0">
+                <img src="{% static 'images/tarco_flor.webp'%}"
+                     alt="Árbol Tarco"
+                     class="w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-br from-stone-50/70 via-gray-50/60 to-stone-100/70"></div>
+            </div>
+            
+            <!-- Contenido de la sección del tarco -->
+            <div class="relative z-10 text-center max-w-4xl mx-auto">               
+                <h2 class="text-xl sm:text-3xl font- tracking-tight text-stone-800 text-left mb-2"> El Árbol Tarco</h2>
+                <div class="grid md:grid-cols-1 gap-8 items-center">
+                    <div class="text-left">
+                        <p class="text-stone-700 text-lg leading-relaxed mb-2">
+                            El <span class="font-semibold">tarco</span> es el árbol emblemático de Sucre, 
+                            un símbolo natural que representa la <span class="font-semibold text-stone-800">identidad</span> 
+                            y el <span class="font-semibold text-stone-800">orgullo</span> de nuestra histórica ciudad.
+                        </p>
+                        <p class="text-stone-700 text-lg leading-relaxed">
+                            Su presencia majestuosa en nuestras calles crea un paisaje único que cautiva a visitantes de todo el mundo, 
+                            siendo un símbolo de <span class="font-semibold">belleza natural</span> y 
+                            <span class="font-semibold">arraigo cultural</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="mx-auto max-w-7xl px-4 md:px-10 lg:px-20">
         <section class="py-12 sm:py-16">
