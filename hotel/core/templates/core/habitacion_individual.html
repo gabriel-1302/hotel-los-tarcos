@@ -5,209 +5,214 @@
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
     style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
-        
+
         <main class="flex-1">
             <div class="px-4 py-12 md:px-8 lg:px-16 xl:px-24 2xl:px-40">
                 <div class="mx-auto max-w-7xl">
-                    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-                        <div class="relative">
+                    <div class="relative grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+                        <!-- Franja decorativa: detrás de todo, sin eventos -->
+                        <div class="hidden lg:block absolute top-80 left-0 w-full h-32 bg-cover bg-center opacity-100 z-0 pointer-events-none"
+                            style="background-image: url('/static/images/fondo_v.webp'); opacity: 0.7;">
+                        </div>
+
+
+                        <!-- Botón: misma posición que la franja, pero por encima -->
+                        <div
+                            class="hidden lg:flex absolute top-80 left-0 w-full h-32 items-center justify-end px-8 z-30">
+                            <a href="{% url 'reservas' %}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden
+              rounded-lg h-12 px-8 border border-white bg-white text-gray-800 text-base font-bold leading-normal
+              tracking-[0.015em] transition-colors duration-200
+              hover:bg-gray-800 hover:text-white hover:border-gray-800">
+                                <span class="truncate">Reservar ahora</span>
+                            </a>
+                        </div>
+
+                        <!-- Columna imagen -->
+                        <div class="relative z-10">
                             <div
-                                class="absolute -left-4 -top-4 bottom-4 w-full bg-purple-600 rounded-2xl transform -rotate-2">
+                                class="absolute -left-4 -top-4 bottom-4 w-full bg-[var(--primary-color)] rounded-2xl -rotate-2 z-0">
                             </div>
                             <img alt="Habitación Deluxe con Vista al Mar"
-                                class="relative w-full h-full object-cover rounded-2xl"
+                                class="relative w-full h-full object-cover rounded-2xl z-10"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDst9R0YDJBImCXqG2OVAxW8wQVGI1ZjowjdwWrkQsg4_3N9BZawMU3kyJovYf9XoVpvGrsYjb2NlwWWSinSK6KkM-Jtbpz5kdM9QlcHL8mNqCbN8uGUKub_Vo4gTCochzcFSlxDVPTXFfRluM6QN248-UMgXlWVneZ8sWdIQrsbr6tup3hYRYhvnpWPB9i1N1iJLxqFTFyxjkuMoRcwhm4Wv3JXY1tnWVxVL4CXXu6nS1lJ7Es5b0npoBj5M8-x8_nAykp6q1Ao7U" />
                         </div>
-                        <div>
-                            <h1 class="text-stone-900 text-4xl font-bold tracking-tight lg:text-5xl">Habitación Deluxe
-                                con Vista al Mar</h1>
-                            <p class="mt-4 text-stone-600 text-lg">
+
+                        <!-- Columna texto -->
+                        <div class="relative z-10">
+                            <h2 class="text-stone-900 text-3xl font-bold tracking-tight lg:text-3xl lg:mt-16">
+                                Habitación Deluxe con Vista al Mar
+                            </h2>
+                            <p class="mt-4 lg:mt-8 text-stone-600 text-lg">
                                 Disfrute de una estancia inolvidable en nuestra habitación Deluxe con impresionantes
                                 vistas al mar. Esta habitación está diseñada para ofrecer el máximo confort y
                                 lujo, con una decoración elegante y todas las comodidades necesarias para una
                                 experiencia relajante.
                             </p>
-                            <div class="mt-10">
-                                <h2 class="text-stone-900 text-2xl font-bold tracking-tight">Especificaciones</h2>
-                                <div class="mt-6 grid grid-cols-2 gap-x-8 gap-y-4">
-                                    <div>
-                                        <p class="text-sm font-medium text-stone-500">Tamaño</p>
-                                        <p class="text-base font-semibold text-stone-900">45 m²</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-stone-500">Tipo de cama</p>
-                                        <p class="text-base font-semibold text-stone-900">Cama King Size</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-stone-500">Capacidad</p>
-                                        <p class="text-base font-semibold text-stone-900">2 adultos</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-stone-500">Vista</p>
-                                        <p class="text-base font-semibold text-stone-900">Vista al mar</p>
-                                    </div>
-                                </div>
-                                <div class="mt-8">
-                                    <a href="{% url 'reservas' %}" class="inline-flex items-center justify-center rounded-md bg-purple-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
-                                        Reservar ahora
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-16">
-                        <h2 class="text-stone-900 text-2xl font-bold tracking-tight">Servicios incluidos</h2>
-                        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                            <div
-                                class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
-                                <div
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
-                                    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <p class="text-stone-900 text-base font-semibold">Wi-Fi gratuito</p>
-                            </div>
-                            <div
-                                class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
-                                <div
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
-                                    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M216,64H147.31l34.35-34.34a8,8,0,1,0-11.32-11.32L128,60.69,85.66,18.34A8,8,0,0,0,74.34,29.66L108.69,64H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64ZM40,80H144V200H40ZM216,200H160V80h56V200Zm-16-84a12,12,0,1,1-12-12A12,12,0,0,1,200,116Zm0,48a12,12,0,1,1-12-12A12,12,0,0,1,200,164Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <p class="text-stone-900 text-base font-semibold">Televisión de pantalla plana</p>
-                            </div>
-                            <div
-                                class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
-                                <div
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
-                                    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <p class="text-stone-900 text-base font-semibold">Cafetera</p>
-                            </div>
-                            <div
-                                class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
-                                <div
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
-                                    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M88,149.39a8,8,0,0,0,8-8V128h64v15.29a8,8,0,0,0,16,0V32a8,8,0,0,0-16,0V48H96V32a8,8,0,0,0-16,0V141.39A8,8,0,0,0,88,149.39ZM96,112V96h64v16Zm64-48V80H96V64ZM24,168a8,8,0,0,1,8-8c14.42,0,22.19,5.18,28.44,9.34C66,173.06,70.42,176,80,176s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34a8,8,0,0,1,0,16c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,178.94,137.57,176,128,176s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,178.94,41.58,176,32,176A8,8,0,0,1,24,168Zm208,40a8,8,0,0,1-8,8c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,218.94,137.57,216,128,216s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,218.94,41.58,216,32,216a8,8,0,0,1,0-16c14.42,0,22.19,5.18,28.44,9.34C66,213.06,70.42,216,80,216s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34A8,8,0,0,1,232,208Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <p class="text-stone-900 text-base font-semibold">Acceso a la piscina</p>
-                            </div>
-                            <div
-                                class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
-                                <div
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
-                                    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M240,192h-8V98.67a16,16,0,0,0-7.12-13.31l-88-58.67a16,16,0,0,0-17.75,0l-88,58.67A16,16,0,0,0,24,98.67V192H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM40,98.67,128,40l88,58.66V192H192V136a8,8,0,0,0-8-8H72a8,8,0,0,0-8,8v56H40ZM176,144v16H136V144Zm-56,16H80V144h40ZM80,176h40v16H80Zm56,0h40v16H136Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <p class="text-stone-900 text-base font-semibold">Estacionamiento gratuito</p>
-                            </div>
-                            <div
-                                class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
-                                <div
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
-                                    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M192,72a8,8,0,0,1-8,8H160a8,8,0,0,1,0-16h24A8,8,0,0,1,192,72Zm-8,24H160a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16ZM72,80H96a8,8,0,0,0,0-16H72a8,8,0,0,0,0,16ZM96,96H72a8,8,0,0,0,0,16H96a8,8,0,0,0,0-16ZM224,48V224a8,8,0,0,1-16,0V208H136v16a8,8,0,0,1-16,0V208H48v16a8,8,0,0,1-16,0V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM120,192V48H48V192Zm16,0h72V48H136Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <p class="text-stone-900 text-base font-semibold">Gimnasio</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-16">
-                        <h2 class="text-stone-900 text-2xl font-bold tracking-tight">Galería de la habitación</h2>
-                        <div id="image-gallery" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                            <a href="{% static 'images/fachada.webp' %}" class="gallery-item">
-                                <img alt="Vista de la habitación" class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" src="{% static 'images/fachada.webp' %}">
-                            </a>
-                            <a href="{% static 'images/cuarto.jpg' %}" class="gallery-item">
-                                <img alt="Baño de la habitación" class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" src="{% static 'images/cuarto.jpg' %}">
-                            </a>
-                            <a href="{% static 'images/fachada.webp' %}" class="gallery-item">
-                                <img alt="Detalle de la cama" class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" src="{% static 'images/fachada.webp' %}">
-                            </a>
-                            <a href="{% static 'images/fachada.webp' %}" class="gallery-item">
-                                <img alt="Balcón con vista" class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" src="{% static 'images/fachada.webp' %}">
-                            </a>
-                        </div>
-                        <div class="mt-8 text-center">
-                            <a href="{% url 'habitaciones' %}" class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-200 px-8 py-3 text-base font-medium text-gray-700 hover:bg-gray-300">
-                                Ver todas las habitaciones
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Modal -->
-                    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center">
-                        <div class="relative max-w-4xl max-h-full p-4">
-                            <button id="modal-close" class="absolute top-4 right-4 text-white text-4xl font-bold z-50">&times;</button>
-                            <img id="modal-image" src="" alt="Imagen ampliada" class="max-w-full max-h-[90vh] rounded-lg">
+
+
+                </div>
+                <div class="mt-16">
+                    <h2 class="text-stone-900 text-2xl font-bold tracking-tight">Servicios incluidos</h2>
+                    <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                                <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="text-stone-900 text-base font-semibold">Wi-Fi gratuito</p>
+                        </div>
+                        <div class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                                <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M216,64H147.31l34.35-34.34a8,8,0,1,0-11.32-11.32L128,60.69,85.66,18.34A8,8,0,0,0,74.34,29.66L108.69,64H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64ZM40,80H144V200H40ZM216,200H160V80h56V200Zm-16-84a12,12,0,1,1-12-12A12,12,0,0,1,200,116Zm0,48a12,12,0,1,1-12-12A12,12,0,0,1,200,164Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="text-stone-900 text-base font-semibold">Televisión de pantalla plana</p>
+                        </div>
+                        <div class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                                <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="text-stone-900 text-base font-semibold">Cafetera</p>
+                        </div>
+                        <div class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                                <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M88,149.39a8,8,0,0,0,8-8V128h64v15.29a8,8,0,0,0,16,0V32a8,8,0,0,0-16,0V48H96V32a8,8,0,0,0-16,0V141.39A8,8,0,0,0,88,149.39ZM96,112V96h64v16Zm64-48V80H96V64ZM24,168a8,8,0,0,1,8-8c14.42,0,22.19,5.18,28.44,9.34C66,173.06,70.42,176,80,176s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34a8,8,0,0,1,0,16c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,178.94,137.57,176,128,176s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,178.94,41.58,176,32,176A8,8,0,0,1,24,168Zm208,40a8,8,0,0,1-8,8c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,218.94,137.57,216,128,216s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,218.94,41.58,216,32,216a8,8,0,0,1,0-16c14.42,0,22.19,5.18,28.44,9.34C66,213.06,70.42,216,80,216s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34A8,8,0,0,1,232,208Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="text-stone-900 text-base font-semibold">Acceso a la piscina</p>
+                        </div>
+                        <div class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                                <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M240,192h-8V98.67a16,16,0,0,0-7.12-13.31l-88-58.67a16,16,0,0,0-17.75,0l-88,58.67A16,16,0,0,0,24,98.67V192H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM40,98.67,128,40l88,58.66V192H192V136a8,8,0,0,0-8-8H72a8,8,0,0,0-8,8v56H40ZM176,144v16H136V144Zm-56,16H80V144h40ZM80,176h40v16H80Zm56,0h40v16H136Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="text-stone-900 text-base font-semibold">Estacionamiento gratuito</p>
+                        </div>
+                        <div class="flex items-center gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                                <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M192,72a8,8,0,0,1-8,8H160a8,8,0,0,1,0-16h24A8,8,0,0,1,192,72Zm-8,24H160a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16ZM72,80H96a8,8,0,0,0,0-16H72a8,8,0,0,0,0,16ZM96,96H72a8,8,0,0,0,0,16H96a8,8,0,0,0,0-16ZM224,48V224a8,8,0,0,1-16,0V208H136v16a8,8,0,0,1-16,0V208H48v16a8,8,0,0,1-16,0V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM120,192V48H48V192Zm16,0h72V48H136Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="text-stone-900 text-base font-semibold">Gimnasio</p>
                         </div>
                     </div>
                 </div>
+                <div class="mt-16">
+                    <h2 class="text-stone-900 text-2xl font-bold tracking-tight">Galería de la habitación</h2>
+                    <div id="image-gallery"
+                        class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        <a href="{% static 'images/fachada.webp' %}" class="gallery-item">
+                            <img alt="Vista de la habitación"
+                                class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                                src="{% static 'images/fachada.webp' %}">
+                        </a>
+                        <a href="{% static 'images/cuarto.jpg' %}" class="gallery-item">
+                            <img alt="Baño de la habitación"
+                                class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                                src="{% static 'images/cuarto.jpg' %}">
+                        </a>
+                        <a href="{% static 'images/fachada.webp' %}" class="gallery-item">
+                            <img alt="Detalle de la cama"
+                                class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                                src="{% static 'images/fachada.webp' %}">
+                        </a>
+                        <a href="{% static 'images/fachada.webp' %}" class="gallery-item">
+                            <img alt="Balcón con vista"
+                                class="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                                src="{% static 'images/fachada.webp' %}">
+                        </a>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <a href="{% url 'habitaciones' %}"
+                            class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-200 px-8 py-3 text-base font-medium text-gray-700 hover:bg-gray-300">
+                            Ver todas las habitaciones
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div id="image-modal"
+                    class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center">
+                    <div class="relative max-w-4xl max-h-full p-4">
+                        <button id="modal-close"
+                            class="absolute top-4 right-4 text-white text-4xl font-bold z-50">&times;</button>
+                        <img id="modal-image" src="" alt="Imagen ampliada" class="max-w-full max-h-[90vh] rounded-lg">
+                    </div>
+                </div>
             </div>
-        </main>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const gallery = document.getElementById('image-gallery');
-    if (!gallery) return;
+    </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gallery = document.getElementById('image-gallery');
+            if (!gallery) return;
 
-    const galleryItems = gallery.querySelectorAll('.gallery-item');
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-image');
-    const closeBtn = document.getElementById('modal-close');
+            const galleryItems = gallery.querySelectorAll('.gallery-item');
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            const closeBtn = document.getElementById('modal-close');
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function (e) {
-            e.preventDefault();
-            modalImg.src = this.href;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modalImg.src = this.href;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                });
+            });
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (modal.classList.contains('hidden')) return;
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
         });
-    });
-
-    function closeModal() {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-    }
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', function (e) {
-        if (modal.classList.contains('hidden')) return;
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
-});
-</script>
-{% endblock %}
+    </script>
+    {% endblock %}
