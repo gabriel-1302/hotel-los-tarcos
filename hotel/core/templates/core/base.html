@@ -227,6 +227,31 @@
       }
     }
 
+    @media (max-height: 650px) and (min-width: 1280px) {
+      .icons-horizontal {
+        display: none !important;
+      }
+      .icons-distributed {
+        display: flex !important;
+      }
+    }
+
+    @media (min-height: 651px) and (min-width: 1280px) {
+      .icons-horizontal {
+        display: flex !important;
+      }
+      .icons-distributed {
+        display: none !important;
+      }
+    }
+
+    /* Animaciones suaves para transiciones */
+    .icons-horizontal,
+    .icons-distributed {
+      transition: opacity 0.3s ease-in-out;
+    }
+
+
     .page-content .card {
       position: relative;
       display: flex;
