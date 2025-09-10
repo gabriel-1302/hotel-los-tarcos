@@ -239,345 +239,323 @@
             <main class="container mx-auto flex-1 px-4 py-12 sm:px-6 lg:px-8">
               <div class="mx-auto max-w-5xl">
                 <div class="mb-10 text-center">
+                  <div class="mb-8 flex justify-center gap-4">
+                    <button
+                      id="filter-all"
+                      onclick="filterRooms('all')"
+                      class="filter-button active rounded-lg px-6 py-2 text-sm font-semibold border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
+                    >
+                      Todos
+                    </button>
+                    <button
+                      id="filter-privado"
+                      onclick="filterRooms('privado')"
+                      class="filter-button inactive rounded-lg px-6 py-2 text-sm font-semibold border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
+                    >
+                      Baño Privado
+                    </button>
+                    <button
+                      id="filter-compartido"
+                      onclick="filterRooms('compartido')"
+                      class="filter-button inactive rounded-lg px-6 py-2 text-sm font-semibold border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
+                    >
+                      Baño Compartido
+                    </button>
+                  </div>
 
-                <div class="mb-8 flex justify-center gap-4">
-                  <button
-                    id="filter-all"
-                    onclick="filterRooms('all')"
-                    class="filter-button active rounded-lg px-6 py-2 text-sm font-semibold border border-black  hover:bg-[var(--primary-color)] hover:text-white  hover:border-white transition-colors"
-                  >
-                    Todos
-                  </button>
-                  <button
-                    id="filter-privado"
-                    onclick="filterRooms('privado')"
-                    class="filter-button inactive rounded-lg px-6 py-2 text-sm font-semibold  border border-black  hover:bg-[var(--primary-color)] hover:text-white  hover:border-white transition-colors"
-                  >
-                    Baño Privado
-                  </button>
-                  <button
-                    id="filter-compartido"
-                    onclick="filterRooms('compartido')"
-                    class="filter-button inactive rounded-lg px-6 py-2 text-sm font-semibold border border-black  hover:bg-[var(--primary-color)] hover:text-white  hover:border-white transition-colors"
-                  >
-                    Baño Compartido
-                  </button>
-                </div>
+                  <!--Tipos de habitaciones -->
 
-                <!-- Contador de habitaciones -->
-                <div class="mb-6 text-center">
-                  <p id="room-counter" class="text-lg text-gray-600">
-                    Mostrando <span id="room-count">3</span> habitaciones
-                  </p>
-                </div>
-
-                <div id="rooms-container" class="space-y-8">
-                  <div
-                    class="room-card privado-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
-                    data-category="privado"
-                  >
+                  <div id="rooms-container" class="space-y-8">
                     <div
-                      class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
-                      style="
-                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA81R_ZPq0SXeKBjdBH2nIKTSw3QGdm-uw2tz0dDrnuFcnBvNXEKQoy_mBEHP0Vn3yOfsK5Jo6a0XAqnkyYZOBU2S4b_I42m3A8UHceL0mVIOiEe7en8nhwuee8YrjkA_4usbHDg0N-B2f9r9OejCT-0NIlHzSY-EJVSQ7PGpu6pH2R2GoDUtUg8OWafh-pdSCjgDd5rDr3mDBjKbV2pbDHtfoXLgJ-WAoTdjKbg5OLQDOVfxYfYlFheTepcecL69kCBWolrd7T210');
-                      "
-                    ></div>
-                    <div class="flex flex-1 flex-col justify-between p-6">
-                      <div>
-                        <div class="mb-2 flex items-center justify-between">
-                          <h3 class="text-2xl font-bold text-gray-900">
-                            Standard Room
-                          </h3>
-                          <span
-                            class="rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
-                            >Privado</span
+                      class="room-card privado-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
+                      data-category="privado"
+                    >
+                      <div
+                        class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA81R_ZPq0SXeKBjdBH2nIKTSw3QGdm-uw2tz0dDrnuFcnBvNXEKQoy_mBEHP0Vn3yOfsK5Jo6a0XAqnkyYZOBU2S4b_I42m3A8UHceL0mVIOiEe7en8nhwuee8YrjkA_4usbHDg0N-B2f9r9OejCT-0NIlHzSY-EJVSQ7PGpu6pH2R2GoDUtUg8OWafh-pdSCjgDd5rDr3mDBjKbV2pbDHtfoXLgJ-WAoTdjKbg5OLQDOVfxYfYlFheTepcecL69kCBWolrd7T210');
+                        "
+                      ></div>
+                      <div class="flex flex-1 flex-col justify-between p-6">
+                        <div>
+                          <div class="mb-2 flex items-center justify-between">
+                            <h3 class="text-2xl font-bold text-gray-900">
+                              Standard Room
+                            </h3>
+                            <span
+                              class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
+                              >Privado</span
+                            >
+                          </div>
+                          <p class="mb-4 text-gray-600">
+                            A cozy and comfortable room featuring a queen-sized
+                            bed, a private bathroom, and a beautiful city view.
+                            Perfect for solo travelers or couples.
+                          </p>
+                          <div
+                            class="mb-4 flex flex-col gap-3 text-sm text-gray-700"
                           >
+                            <!-- Camas -->
+                            <div class="flex items-center gap-2">
+                              <div
+                                class="flex items-center justify-center rounded-full w-10 h-10 border-2 border-[var(--primary-color)]"
+                              >
+                                <i
+                                  class="fa-solid fa-bed text-[var(--primary-color)]"
+                                ></i>
+                              </div>
+                              <span>2 camas de dos plazas</span>
+                            </div>
+                            <!-- Vista a la ciudad -->
+                            <div class="flex items-center gap-2">
+                              <div
+                                class="flex items-center justify-center rounded-full w-10 h-10 border-2 border-[var(--primary-color)]"
+                              >
+                                <i
+                                  class="fa-solid fa-tree-city text-[var(--primary-color)]"
+                                ></i>
+                              </div>
+                              <span>Con vista a la ciudad</span>
+                            </div>
+                          </div>
                         </div>
-                        <p class="mb-4 text-gray-600">
-                          A cozy and comfortable room featuring a queen-sized
-                          bed, a private bathroom, and a beautiful city view.
-                          Perfect for solo travelers or couples.
-                        </p>
-                        <div
-                          class="mb-4 flex flex-wrap gap-3 text-sm text-gray-700"
-                        >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >wifi</span
-                            >Wi-Fi</span
+                        <div class="flex items-center justify-between">
+                          <p class="text-2xl font-bold text-gray-900">
+                            Bs.150<span
+                              class="text-base font-normal text-gray-500"
+                              >/noche</span
+                            >
+                          </p>
+                          <button
+                            class="rounded-lg px-5 py-2.5 text-sm font-semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
                           >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >ac_unit</span
-                            >Air Conditioning</span
-                          >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >tv</span
-                            >Flat-screen TV</span
-                          >
+                            Reservar
+                          </button>
                         </div>
                       </div>
-                      <div class="flex items-center justify-between">
-                        <p class="text-2xl font-bold text-gray-900">
-                          $150<span class="text-base font-normal text-gray-500"
-                            >/night</span
+                    </div>
+
+                    <div
+                      class="room-card compartido-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
+                      data-category="compartido"
+                    >
+                      <div
+                        class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrv8SxKEYYNJE6Py0AVDfj8dvf_jsR4WbBkOCl3mMVrvf8NiT3BUAx1dp0ty8tIkOxfhRBODt2yRLYc5t64yd32Q9vDZG8tAaig3R6AhyXk683DnGJbhtWaYPfyM5QDZQUT0UcjOdpSS3Q7q9W8F5xWXYAm7Rs92XcLRmYSANnCJeENIHm60qgKOGTinIIw6ENaizI0H_rWEdVoV7VtGuEvHOpb3rQGp-fzS4oS9rGWOlKxHnEiquMNVwRQfAGdnMMRd60V-ZX46c');
+                        "
+                      ></div>
+                      <div class="flex flex-1 flex-col justify-between p-6">
+                        <div>
+                          <div class="mb-2 flex items-center justify-between">
+                            <h3 class="text-2xl font-bold text-gray-900">
+                              Deluxe Room
+                            </h3>
+                            <span
+                              class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
+                              >Compartido</span
+                            >
+                          </div>
+                          <p class="mb-4 text-gray-600">
+                            A spacious and elegant room with a king-sized bed, a
+                            private balcony with stunning views, and a range of
+                            premium amenities for an unforgettable stay.
+                          </p>
+                          <div
+                            class="mb-4 flex flex-wrap gap-3 text-sm text-gray-700"
+                          ></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                          <p class="text-2xl font-bold text-gray-900">
+                            Bs.250<span
+                              class="text-base font-normal text-gray-500"
+                              >/noche</span
+                            >
+                          </p>
+                          <button
+                            class="rounded-lg px-5 py-2.5 text-sm font-semibold semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
                           >
-                        </p>
-                        <button
-                          class="rounded-lg bg-[var(--primary-color)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-color-hover)] transform hover:scale-105 transition-all"
-                        >
-                          Book Now
-                        </button>
+                            Reservar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="room-card compartido-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
+                      data-category="compartido"
+                    >
+                      <div
+                        class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFIN0xowXjAmrVTzqWsvorqdCFZFcp2Loex3c11cjYaivm1P7p0gVUfaF594bo8VRrmdq9eE3yI-75iII05c1p6kcgFKMfG0WNq5JXlZN3Smmp_rJj_fZu0hmeRZg6SWObci22rZClGTFXiVH1AYJhEiugd79RNSmQjV_OG8EJOHqPSL65ov6OILwRSuzB6HqozVInWH2RrtBFzT4PLhI5lnR8THEyzsCdkEVoyUImtLL2eJ1T57naGieXtjKKhMk3S6LYbirRnJU');
+                        "
+                      ></div>
+                      <div class="flex flex-1 flex-col justify-between p-6">
+                        <div>
+                          <div class="mb-2 flex items-center justify-between">
+                            <h3 class="text-2xl font-bold text-gray-900">
+                              Luxury Suite
+                            </h3>
+                            <span
+                              class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
+                              >Compartido</span
+                            >
+                          </div>
+                          <p class="mb-4 text-gray-600">
+                            Experience ultimate luxury in our suite, featuring a
+                            separate living area, a plush king-sized bed, and
+                            panoramic views of the entire city.
+                          </p>
+                          <div
+                            class="mb-4 flex flex-wrap gap-3 text-sm text-gray-700"
+                          ></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                          <p class="text-2xl font-bold text-gray-900">
+                            Bs.350<span
+                              class="text-base font-normal text-gray-500"
+                              >/noche</span
+                            >
+                          </p>
+                          <button
+                            class="rounded-lg px-5 py-2.5 text-sm font-semibold semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
+                          >
+                            Reservar
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div
-                    class="room-card compartido-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
-                    data-category="compartido"
-                  >
-                    <div
-                      class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
-                      style="
-                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrv8SxKEYYNJE6Py0AVDfj8dvf_jsR4WbBkOCl3mMVrvf8NiT3BUAx1dp0ty8tIkOxfhRBODt2yRLYc5t64yd32Q9vDZG8tAaig3R6AhyXk683DnGJbhtWaYPfyM5QDZQUT0UcjOdpSS3Q7q9W8F5xWXYAm7Rs92XcLRmYSANnCJeENIHm60qgKOGTinIIw6ENaizI0H_rWEdVoV7VtGuEvHOpb3rQGp-fzS4oS9rGWOlKxHnEiquMNVwRQfAGdnMMRd60V-ZX46c');
-                      "
-                    ></div>
-                    <div class="flex flex-1 flex-col justify-between p-6">
-                      <div>
-                        <div class="mb-2 flex items-center justify-between">
-                          <h3 class="text-2xl font-bold text-gray-900">
-                            Deluxe Room
-                          </h3>
-                          <span
-                            class="rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-800"
-                            >Compartido</span
-                          >
-                        </div>
-                        <p class="mb-4 text-gray-600">
-                          A spacious and elegant room with a king-sized bed, a
-                          private balcony with stunning views, and a range of
-                          premium amenities for an unforgettable stay.
-                        </p>
-                        <div
-                          class="mb-4 flex flex-wrap gap-3 text-sm text-gray-700"
-                        >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >wifi</span
-                            >High-Speed Wi-Fi</span
-                          >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >balcony</span
-                            >Private Balcony</span
-                          >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >bathtub</span
-                            >Soaking Tub</span
-                          >
-                        </div>
-                      </div>
-                      <div class="flex items-center justify-between">
-                        <p class="text-2xl font-bold text-gray-900">
-                          $250<span class="text-base font-normal text-gray-500"
-                            >/night</span
-                          >
-                        </p>
-                        <button
-                          class="rounded-lg bg-[var(--primary-color)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-color-hover)] transform hover:scale-105 transition-all"
-                        >
-                          Book Now
-                        </button>
-                      </div>
-                    </div>
+                  <!-- Mensaje cuando no hay resultados -->
+                  <div id="no-results" class="hidden text-center py-12">
+                    <span
+                      class="material-symbols-outlined text-6xl text-gray-300 mb-4 block"
+                      >search_off</span
+                    >
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">
+                      No se encontraron habitaciones
+                    </h3>
+                    <p class="text-gray-500">
+                      Prueba con otro filtro para ver más opciones.
+                    </p>
                   </div>
-
-                  <div
-                    class="room-card compartido-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
-                    data-category="compartido"
-                  >
-                    <div
-                      class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
-                      style="
-                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFIN0xowXjAmrVTzqWsvorqdCFZFcp2Loex3c11cjYaivm1P7p0gVUfaF594bo8VRrmdq9eE3yI-75iII05c1p6kcgFKMfG0WNq5JXlZN3Smmp_rJj_fZu0hmeRZg6SWObci22rZClGTFXiVH1AYJhEiugd79RNSmQjV_OG8EJOHqPSL65ov6OILwRSuzB6HqozVInWH2RrtBFzT4PLhI5lnR8THEyzsCdkEVoyUImtLL2eJ1T57naGieXtjKKhMk3S6LYbirRnJU');
-                      "
-                    ></div>
-                    <div class="flex flex-1 flex-col justify-between p-6">
-                      <div>
-                        <div class="mb-2 flex items-center justify-between">
-                          <h3 class="text-2xl font-bold text-gray-900">
-                            Luxury Suite
-                          </h3>
-                          <span
-                            class="rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-800"
-                            >Compartido</span
-                          >
-                        </div>
-                        <p class="mb-4 text-gray-600">
-                          Experience ultimate luxury in our suite, featuring a
-                          separate living area, a plush king-sized bed, and
-                          panoramic views of the entire city.
-                        </p>
-                        <div
-                          class="mb-4 flex flex-wrap gap-3 text-sm text-gray-700"
-                        >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >living</span
-                            >Separate Living Room</span
-                          >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >free_breakfast</span
-                            >Complimentary Breakfast</span
-                          >
-                          <span class="flex items-center gap-2"
-                            ><span class="material-symbols-outlined text-base"
-                              >local_bar</span
-                            >Mini Bar</span
-                          >
-                        </div>
-                      </div>
-                      <div class="flex items-center justify-between">
-                        <p class="text-2xl font-bold text-gray-900">
-                          $350<span class="text-base font-normal text-gray-500"
-                            >/night</span
-                          >
-                        </p>
-                        <button
-                          class="rounded-lg bg-[var(--primary-color)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-color-hover)] transform hover:scale-105 transition-all"
-                        >
-                          Book Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Mensaje cuando no hay resultados -->
-                <div id="no-results" class="hidden text-center py-12">
-                  <span
-                    class="material-symbols-outlined text-6xl text-gray-300 mb-4 block"
-                    >search_off</span
-                  >
-                  <h3 class="text-xl font-semibold text-gray-700 mb-2">
-                    No se encontraron habitaciones
-                  </h3>
-                  <p class="text-gray-500">
-                    Prueba con otro filtro para ver más opciones.
-                  </p>
                 </div>
               </div>
             </main>
           </div>
         </div>
+        <script>
+          let currentFilter = "all";
+
+          function filterRooms(category) {
+            currentFilter = category;
+
+            // Actualizar estados de los botones
+            document.querySelectorAll(".filter-button").forEach((button) => {
+              button.classList.remove("active");
+              button.classList.add("inactive");
+            });
+
+            const activeButton = document.getElementById(`filter-${category}`);
+            activeButton.classList.remove("inactive");
+            activeButton.classList.add("active");
+
+            // Filtrar habitaciones
+            const rooms = document.querySelectorAll(".room-card");
+            let visibleRooms = 0;
+
+            rooms.forEach((room) => {
+              const roomCategory = room.dataset.category;
+
+              if (category === "all" || roomCategory === category) {
+                room.classList.remove("hidden");
+                visibleRooms++;
+              } else {
+                room.classList.add("hidden");
+              }
+            });
+
+            // Actualizar contador
+            updateRoomCounter(visibleRooms, category);
+
+            // Mostrar/ocultar mensaje de "sin resultados"
+            const noResults = document.getElementById("no-results");
+            const roomsContainer = document.getElementById("rooms-container");
+
+            if (visibleRooms === 0) {
+              noResults.classList.remove("hidden");
+              roomsContainer.style.display = "none";
+            } else {
+              noResults.classList.add("hidden");
+              roomsContainer.style.display = "block";
+            }
+          }
+
+          function updateRoomCounter(count, category) {
+            const counter = document.getElementById("room-count");
+            const counterText = document.getElementById("room-counter");
+
+            counter.textContent = count;
+
+            let categoryText = "";
+            switch (category) {
+              case "all":
+                categoryText = "habitaciones";
+                break;
+              case "privado":
+                categoryText = "habitaciones privadas";
+                break;
+              case "compartido":
+                categoryText = "habitaciones compartidas";
+                break;
+            }
+
+            counterText.innerHTML = `Mostrando <span id="room-count">${count}</span> ${categoryText}`;
+          }
+
+          // Inicializar filtros al cargar la página
+          document.addEventListener("DOMContentLoaded", function () {
+            filterRooms("all");
+          });
+
+          // Agregar animación suave al cambiar filtros
+          function smoothFilter(category) {
+            const rooms = document.querySelectorAll(".room-card");
+
+            // Fade out
+            rooms.forEach((room) => {
+              room.style.opacity = "0.5";
+              room.style.transform = "scale(0.95)";
+            });
+
+            setTimeout(() => {
+              filterRooms(category);
+
+              // Fade in
+              const visibleRooms = document.querySelectorAll(
+                ".room-card:not(.hidden)"
+              );
+              visibleRooms.forEach((room, index) => {
+                setTimeout(() => {
+                  room.style.opacity = "1";
+                  room.style.transform = "scale(1)";
+                }, index * 100);
+              });
+            }, 150);
+          }
+
+          // Reemplazar las llamadas onclick con la función suave
+          document.getElementById("filter-all").onclick = () =>
+            smoothFilter("all");
+          document.getElementById("filter-privado").onclick = () =>
+            smoothFilter("privado");
+          document.getElementById("filter-compartido").onclick = () =>
+            smoothFilter("compartido");
+        </script>
+        {% endblock %}
       </div>
     </main>
   </div>
 </div>
-<script>
-    let currentFilter = 'all';
-
-    function filterRooms(category) {
-      currentFilter = category;
-
-      // Actualizar estados de los botones
-      document.querySelectorAll('.filter-button').forEach(button => {
-        button.classList.remove('active');
-        button.classList.add('inactive');
-      });
-
-      const activeButton = document.getElementById(`filter-${category}`);
-      activeButton.classList.remove('inactive');
-      activeButton.classList.add('active');
-
-      // Filtrar habitaciones
-      const rooms = document.querySelectorAll('.room-card');
-      let visibleRooms = 0;
-
-      rooms.forEach(room => {
-        const roomCategory = room.dataset.category;
-
-        if (category === 'all' || roomCategory === category) {
-          room.classList.remove('hidden');
-          visibleRooms++;
-        } else {
-          room.classList.add('hidden');
-        }
-      });
-
-      // Actualizar contador
-      updateRoomCounter(visibleRooms, category);
-
-      // Mostrar/ocultar mensaje de "sin resultados"
-      const noResults = document.getElementById('no-results');
-      const roomsContainer = document.getElementById('rooms-container');
-
-      if (visibleRooms === 0) {
-        noResults.classList.remove('hidden');
-        roomsContainer.style.display = 'none';
-      } else {
-        noResults.classList.add('hidden');
-        roomsContainer.style.display = 'block';
-      }
-    }
-
-    function updateRoomCounter(count, category) {
-      const counter = document.getElementById('room-count');
-      const counterText = document.getElementById('room-counter');
-
-      counter.textContent = count;
-
-      let categoryText = '';
-      switch (category) {
-        case 'all':
-          categoryText = 'habitaciones';
-          break;
-        case 'privado':
-          categoryText = 'habitaciones privadas';
-          break;
-        case 'compartido':
-          categoryText = 'habitaciones compartidas';
-          break;
-      }
-
-      counterText.innerHTML = `Mostrando <span id="room-count">${count}</span> ${categoryText}`;
-    }
-
-    // Inicializar filtros al cargar la página
-    document.addEventListener('DOMContentLoaded', function () {
-      filterRooms('all');
-    });
-
-    // Agregar animación suave al cambiar filtros
-    function smoothFilter(category) {
-      const rooms = document.querySelectorAll('.room-card');
-
-      // Fade out
-      rooms.forEach(room => {
-        room.style.opacity = '0.5';
-        room.style.transform = 'scale(0.95)';
-      });
-
-      setTimeout(() => {
-        filterRooms(category);
-
-        // Fade in
-        const visibleRooms = document.querySelectorAll('.room-card:not(.hidden)');
-        visibleRooms.forEach((room, index) => {
-          setTimeout(() => {
-            room.style.opacity = '1';
-            room.style.transform = 'scale(1)';
-          }, index * 100);
-        });
-      }, 150);
-    }
-
-    // Reemplazar las llamadas onclick con la función suave
-    document.getElementById('filter-all').onclick = () => smoothFilter('all');
-    document.getElementById('filter-privado').onclick = () => smoothFilter('privado');
-    document.getElementById('filter-compartido').onclick = () => smoothFilter('compartido');
-  </script>
-{% endblock %}
