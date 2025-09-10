@@ -2,7 +2,6 @@
 
 <div
   class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
-  style="font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif"
 >
   <div class="layout-container flex h-full grow flex-col">
     <main class="flex-1">
@@ -240,32 +239,28 @@
             <main class="container mx-auto flex-1 px-4 py-12 sm:px-6 lg:px-8">
               <div class="mx-auto max-w-5xl">
                 <div class="mb-10 text-center">
-                  
-                  <h3 class="mt-4 font-bold text-2xl">
-                    Descubre tu habitación ideal
-                  </h3>
-                </div>
+
                 <div class="mb-8 flex justify-center gap-4">
                   <button
                     id="filter-all"
                     onclick="filterRooms('all')"
-                    class="filter-button active rounded-full px-6 py-2 text-sm font-semibold shadow-sm hover:shadow-md transform hover:scale-105"
+                    class="filter-button active rounded-lg px-6 py-2 text-sm font-semibold border border-black  hover:bg-[var(--primary-color)] hover:text-white  hover:border-white transition-colors"
                   >
                     Todos
                   </button>
                   <button
                     id="filter-privado"
                     onclick="filterRooms('privado')"
-                    class="filter-button inactive rounded-full px-6 py-2 text-sm font-semibold hover:bg-gray-50 hover:shadow-md transform hover:scale-105"
+                    class="filter-button inactive rounded-lg px-6 py-2 text-sm font-semibold  border border-black  hover:bg-[var(--primary-color)] hover:text-white  hover:border-white transition-colors"
                   >
-                    Privado
+                    Baño Privado
                   </button>
                   <button
                     id="filter-compartido"
                     onclick="filterRooms('compartido')"
-                    class="filter-button inactive rounded-full px-6 py-2 text-sm font-semibold hover:bg-gray-50 hover:shadow-md transform hover:scale-105"
+                    class="filter-button inactive rounded-lg px-6 py-2 text-sm font-semibold border border-black  hover:bg-[var(--primary-color)] hover:text-white  hover:border-white transition-colors"
                   >
-                    Compartido
+                    Baño Compartido
                   </button>
                 </div>
 
