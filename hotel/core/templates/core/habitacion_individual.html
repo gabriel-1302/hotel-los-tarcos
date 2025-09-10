@@ -446,116 +446,113 @@
             </main>
           </div>
         </div>
-        <script>
-          let currentFilter = "all";
-
-          function filterRooms(category) {
-            currentFilter = category;
-
-            // Actualizar estados de los botones
-            document.querySelectorAll(".filter-button").forEach((button) => {
-              button.classList.remove("active");
-              button.classList.add("inactive");
-            });
-
-            const activeButton = document.getElementById(`filter-${category}`);
-            activeButton.classList.remove("inactive");
-            activeButton.classList.add("active");
-
-            // Filtrar habitaciones
-            const rooms = document.querySelectorAll(".room-card");
-            let visibleRooms = 0;
-
-            rooms.forEach((room) => {
-              const roomCategory = room.dataset.category;
-
-              if (category === "all" || roomCategory === category) {
-                room.classList.remove("hidden");
-                visibleRooms++;
-              } else {
-                room.classList.add("hidden");
-              }
-            });
-
-            // Actualizar contador
-            updateRoomCounter(visibleRooms, category);
-
-            // Mostrar/ocultar mensaje de "sin resultados"
-            const noResults = document.getElementById("no-results");
-            const roomsContainer = document.getElementById("rooms-container");
-
-            if (visibleRooms === 0) {
-              noResults.classList.remove("hidden");
-              roomsContainer.style.display = "none";
-            } else {
-              noResults.classList.add("hidden");
-              roomsContainer.style.display = "block";
-            }
-          }
-
-          function updateRoomCounter(count, category) {
-            const counter = document.getElementById("room-count");
-            const counterText = document.getElementById("room-counter");
-
-            counter.textContent = count;
-
-            let categoryText = "";
-            switch (category) {
-              case "all":
-                categoryText = "habitaciones";
-                break;
-              case "privado":
-                categoryText = "habitaciones privadas";
-                break;
-              case "compartido":
-                categoryText = "habitaciones compartidas";
-                break;
-            }
-
-            counterText.innerHTML = `Mostrando <span id="room-count">${count}</span> ${categoryText}`;
-          }
-
-          // Inicializar filtros al cargar la página
-          document.addEventListener("DOMContentLoaded", function () {
-            filterRooms("all");
-          });
-
-          // Agregar animación suave al cambiar filtros
-          function smoothFilter(category) {
-            const rooms = document.querySelectorAll(".room-card");
-
-            // Fade out
-            rooms.forEach((room) => {
-              room.style.opacity = "0.5";
-              room.style.transform = "scale(0.95)";
-            });
-
-            setTimeout(() => {
-              filterRooms(category);
-
-              // Fade in
-              const visibleRooms = document.querySelectorAll(
-                ".room-card:not(.hidden)"
-              );
-              visibleRooms.forEach((room, index) => {
-                setTimeout(() => {
-                  room.style.opacity = "1";
-                  room.style.transform = "scale(1)";
-                }, index * 100);
-              });
-            }, 150);
-          }
-
-          // Reemplazar las llamadas onclick con la función suave
-          document.getElementById("filter-all").onclick = () =>
-            smoothFilter("all");
-          document.getElementById("filter-privado").onclick = () =>
-            smoothFilter("privado");
-          document.getElementById("filter-compartido").onclick = () =>
-            smoothFilter("compartido");
-        </script>
-        {% endblock %}
       </div>
     </main>
   </div>
 </div>
+<script>
+  let currentFilter = "all";
+
+  function filterRooms(category) {
+    currentFilter = category;
+
+    // Actualizar estados de los botones
+    document.querySelectorAll(".filter-button").forEach((button) => {
+      button.classList.remove("active");
+      button.classList.add("inactive");
+    });
+
+    const activeButton = document.getElementById(`filter-${category}`);
+    activeButton.classList.remove("inactive");
+    activeButton.classList.add("active");
+
+    // Filtrar habitaciones
+    const rooms = document.querySelectorAll(".room-card");
+    let visibleRooms = 0;
+
+    rooms.forEach((room) => {
+      const roomCategory = room.dataset.category;
+
+      if (category === "all" || roomCategory === category) {
+        room.classList.remove("hidden");
+        visibleRooms++;
+      } else {
+        room.classList.add("hidden");
+      }
+    });
+
+    // Actualizar contador
+    updateRoomCounter(visibleRooms, category);
+
+    // Mostrar/ocultar mensaje de "sin resultados"
+    const noResults = document.getElementById("no-results");
+    const roomsContainer = document.getElementById("rooms-container");
+
+    if (visibleRooms === 0) {
+      noResults.classList.remove("hidden");
+      roomsContainer.style.display = "none";
+    } else {
+      noResults.classList.add("hidden");
+      roomsContainer.style.display = "block";
+    }
+  }
+
+  function updateRoomCounter(count, category) {
+    const counter = document.getElementById("room-count");
+    const counterText = document.getElementById("room-counter");
+
+    counter.textContent = count;
+
+    let categoryText = "";
+    switch (category) {
+      case "all":
+        categoryText = "habitaciones";
+        break;
+      case "privado":
+        categoryText = "habitaciones privadas";
+        break;
+      case "compartido":
+        categoryText = "habitaciones compartidas";
+        break;
+    }
+
+    counterText.innerHTML = `Mostrando <span id="room-count">${count}</span> ${categoryText}`;
+  }
+
+  // Inicializar filtros al cargar la página
+  document.addEventListener("DOMContentLoaded", function () {
+    filterRooms("all");
+  });
+
+  // Agregar animación suave al cambiar filtros
+  function smoothFilter(category) {
+    const rooms = document.querySelectorAll(".room-card");
+
+    // Fade out
+    rooms.forEach((room) => {
+      room.style.opacity = "0.5";
+      room.style.transform = "scale(0.95)";
+    });
+
+    setTimeout(() => {
+      filterRooms(category);
+
+      // Fade in
+      const visibleRooms = document.querySelectorAll(".room-card:not(.hidden)");
+      visibleRooms.forEach((room, index) => {
+        setTimeout(() => {
+          room.style.opacity = "1";
+          room.style.transform = "scale(1)";
+        }, index * 100);
+      });
+    }, 150);
+  }
+
+  // Reemplazar las llamadas onclick con la función suave
+  document.getElementById("filter-all").onclick = () => smoothFilter("all");
+  document.getElementById("filter-privado").onclick = () =>
+    smoothFilter("privado");
+  document.getElementById("filter-compartido").onclick = () =>
+    smoothFilter("compartido");
+</script>
+{% endblock %}
