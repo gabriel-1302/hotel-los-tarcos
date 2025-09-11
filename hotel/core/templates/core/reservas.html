@@ -6,45 +6,74 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-2">
                 <div class="flex flex-col justify-center">
+                    {% load static %}
                     <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
-                        Reservas y Contacto en Hotel Los Tarcos
+                        Reservas y Contacto en Hotel Los Tarcoss
                     </h1>
                     <p class="mt-4 text-base sm:text-lg leading-8 text-gray-600">
-                        ¿Listo para una estancia inolvidable en Sucre? Rellene el formulario para reservar su habitación en Hotel Los Tarcos o envíenos un mensaje. ¡Le esperamos en la ciudad blanca!
+                        ¿Listo para una estancia inolvidable en Sucre? Rellene el formulario para reservar su habitación
+                        en Hotel Los Tarcoss o envíenos un mensaje. ¡Le esperamos en la ciudad blanca!
                     </p>
+                    <img class="mt-8 rounded-lg shadow-lg w-5/6 mx-auto" src="{% static 'images/fachada.webp' %}"
+                        alt="Fachada del Hotel Los Tarcoss">
                 </div>
                 <div class="rounded-2xl bg-gray-50 p-8 shadow-lg">
                     <form id="reservationForm" class="space-y-6">
                         <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium leading-6 text-gray-900" for="nombre">
-                                    Nombre *
+                                <label class="block text-sm font-medium leading-6 text-gray-900" for="nombres">
+                                    Nombres *
                                 </label>
                                 <div class="mt-2">
                                     <input
                                         class="block w-full rounded-md border-0 bg-white px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
-                                        id="nombre" name="nombre" placeholder="Su nombre completo" type="text" required />
+                                        id="nombres" name="nombres" placeholder="Sus nombres" type="text" required />
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium leading-6 text-gray-900" for="email">
-                                    Correo electrónico *
+                                <label class="block text-sm font-medium leading-6 text-gray-900" for="apellidos">
+                                    Apellidos *
                                 </label>
                                 <div class="mt-2">
                                     <input
                                         class="block w-full rounded-md border-0 bg-white px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
-                                        id="email" name="email" placeholder="Su correo electrónico" type="email" required />
+                                        id="apellidos" name="apellidos" placeholder="Sus apellidos" type="text"
+                                        required />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium leading-6 text-gray-900" for="telefono">
-                                Teléfono *
+                            <label class="block text-sm font-medium leading-6 text-gray-900" for="email">
+                                Correo electrónico *
                             </label>
                             <div class="mt-2">
                                 <input
                                     class="block w-full rounded-md border-0 bg-white px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
-                                    id="telefono" name="telefono" placeholder="Su número de teléfono" type="tel" required />
+                                    id="email" name="email" placeholder="Su correo electrónico" type="email" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium leading-6 text-gray-900" for="telefono">
+                                Teléfono Celular *
+                            </label>
+                            <div class="mt-2 flex rounded-md shadow-sm">
+                                <select id="country-code" name="country-code"
+                                    class="block w-1/3 rounded-l-md border-0 bg-white py-2 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6">
+                                    <option value="+591">🇧🇴 +591</option>
+                                    <option value="+54">🇦🇷 +54</option>
+                                    <option value="+55">🇧🇷 +55</option>
+                                    <option value="+56">🇨🇱 +56</option>
+                                    <option value="+57">🇨🇴 +57</option>
+                                    <option value="+593">🇪🇨 +593</option>
+                                    <option value="+595">🇵🇾 +595</option>
+                                    <option value="+51">🇵🇪 +51</option>
+                                    <option value="+598">🇺🇾 +598</option>
+                                    <option value="+58">🇻🇪 +58</option>
+                                </select>
+                                <input
+                                    class="block w-2/3 rounded-r-md border-0 bg-white px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
+                                    id="telefono" name="telefono" placeholder="Su número de celular" type="tel"
+                                    required />
                             </div>
                         </div>
                         <div>
@@ -56,14 +85,16 @@
                                     class="block w-full rounded-md border-0 bg-white py-2 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
                                     id="habitacion" name="habitacion" required>
                                     <option value="">Selecciona el tipo de habitación</option>
-                                    <option value="Habitación Estándar">Habitación Estándar</option>
-                                    <option value="Habitación Deluxe">Habitación Deluxe</option>
-                                    <option value="Suite Familiar">Suite Familiar</option>
-                                    <option value="Suite Presidencial">Suite Presidencial</option>
+                                    <option value="Matrimonial">Matrimonial</option>
+                                    <option value="Triple">Triple</option>
+                                    <option value="Cuádruple">Cuádruple</option>
+                                    <option value="Quíntuple">Quíntuple</option>
+                                    <option value="Séxtuple">Séxtuple</option>
+                                    <option value="Séptuple">Séptuple</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-3">
+                        <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                             <div>
                                 <label class="block text-sm font-medium leading-6 text-gray-900" for="llegada">
                                     Fecha de llegada *
@@ -84,6 +115,8 @@
                                         id="salida" name="salida" type="date" required />
                                 </div>
                             </div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                             <div>
                                 <label class="block text-sm font-medium leading-6 text-gray-900" for="adultos">
                                     Número de adultos *
@@ -105,8 +138,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-1">
                             <div>
                                 <label class="block text-sm font-medium leading-6 text-gray-900" for="ninos">
                                     Número de niños (0-12 años)
@@ -127,6 +158,22 @@
                             </div>
                         </div>
                         <div>
+                            <label class="block text-sm font-medium leading-6 text-gray-900" for="desayuno_opcion">
+                                Opción de Desayuno *
+                            </label>
+                            <div class="mt-2">
+                                <select
+                                    class="block w-full rounded-md border-0 bg-white py-2 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
+                                    id="desayuno_opcion" name="desayuno_opcion" required>
+                                    <option value="" disabled selected>Seleccione una opción</option>
+                                    <option value="Sin Desayuno">Sin Desayuno</option>
+                                    <option value="Desayuno Normal">Desayuno Normal</option>
+                                    <option value="Desayuno Continental (Costo extra)">Desayuno Continental (Costo
+                                        extra)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
                             <label class="block text-sm font-medium leading-6 text-gray-900 mb-3">
                                 Servicios adicionales
                             </label>
@@ -134,17 +181,9 @@
                                 <div class="flex items-center">
                                     <input
                                         class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
-                                        id="desayuno" name="servicios" type="checkbox" value="desayuno" />
-                                    <label class="ml-3 text-sm text-gray-900" for="desayuno">
-                                        🍳 Desayuno incluido
-                                    </label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input
-                                        class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
                                         id="recojo" name="servicios" type="checkbox" value="recojo" />
                                     <label class="ml-3 text-sm text-gray-900" for="recojo">
-                                        🚗 Recojo de aeropuerto/terminal
+                                        Recojo de aeropuerto/terminal
                                     </label>
                                 </div>
                                 <div class="flex items-center">
@@ -152,7 +191,7 @@
                                         class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
                                         id="garaje" name="servicios" type="checkbox" value="garaje" />
                                     <label class="ml-3 text-sm text-gray-900" for="garaje">
-                                        🚙 Garaje/Estacionamiento
+                                        Garaje/Estacionamiento
                                     </label>
                                 </div>
                                 <div class="flex items-center">
@@ -160,7 +199,7 @@
                                         class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
                                         id="salon" name="servicios" type="checkbox" value="salon" />
                                     <label class="ml-3 text-sm text-gray-900" for="salon">
-                                        🎉 Salón de eventos
+                                        Salón de eventos
                                     </label>
                                 </div>
                                 <div class="flex items-center">
@@ -168,7 +207,7 @@
                                         class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
                                         id="limpieza" name="servicios" type="checkbox" value="limpieza" />
                                     <label class="ml-3 text-sm text-gray-900" for="limpieza">
-                                        🧹 Servicio de limpieza diario
+                                        Servicio de limpieza diario
                                     </label>
                                 </div>
                             </div>
@@ -180,7 +219,8 @@
                             <div class="mt-2">
                                 <textarea
                                     class="block w-full rounded-md border-0 bg-white px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
-                                    id="mensaje" name="mensaje" placeholder="Escribe tu mensaje adicional..." rows="4"></textarea>
+                                    id="mensaje" name="mensaje" placeholder="Escribe tu mensaje adicional..."
+                                    rows="4"></textarea>
                             </div>
                         </div>
                         <div class="pt-4">
@@ -198,20 +238,23 @@
 </main>
 
 <script>
-    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    document.getElementById('reservationForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Obtener los valores del formulario
-        const nombre = document.getElementById('nombre').value;
+        const nombres = document.getElementById('nombres').value;
+        const apellidos = document.getElementById('apellidos').value;
         const email = document.getElementById('email').value;
+        const countryCode = document.getElementById('country-code').value;
         const telefono = document.getElementById('telefono').value;
         const habitacion = document.getElementById('habitacion').value;
         const llegada = document.getElementById('llegada').value;
         const salida = document.getElementById('salida').value;
         const adultos = document.getElementById('adultos').value;
         const ninos = document.getElementById('ninos').value;
+        const desayuno = document.getElementById('desayuno_opcion').value;
         const mensaje = document.getElementById('mensaje').value;
-        
+
         // Obtener servicios seleccionados
         const serviciosSeleccionados = [];
         const checkboxes = document.querySelectorAll('input[name="servicios"]:checked');
@@ -219,19 +262,19 @@
             const label = document.querySelector(`label[for="${checkbox.id}"]`).textContent.trim();
             serviciosSeleccionados.push(label);
         });
-        
+
         // Validar campos requeridos
-        if (!nombre || !email || !telefono || !habitacion || !llegada || !salida || !adultos) {
+        if (!nombres || !apellidos || !email || !telefono || !habitacion || !llegada || !salida || !adultos || !desayuno) {
             alert('Por favor, complete todos los campos obligatorios (marcados con *)');
             return;
         }
-        
+
         // Validar que la fecha de salida sea posterior a la de llegada
         if (new Date(salida) <= new Date(llegada)) {
             alert('La fecha de salida debe ser posterior a la fecha de llegada');
             return;
         }
-        
+
         // Formatear las fechas para mejor legibilidad
         const fechaLlegadaFormateada = new Date(llegada).toLocaleDateString('es-ES', {
             weekday: 'long',
@@ -239,57 +282,57 @@
             month: 'long',
             day: 'numeric'
         });
-        
+
         const fechaSalidaFormateada = new Date(salida).toLocaleDateString('es-ES', {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
-        
+
         // Construir el mensaje de WhatsApp
-        let mensajeWhatsApp = `🏨 *RESERVA HOTEL LOS TARCOS* 🏨%0A%0A`;
-        mensajeWhatsApp += `👤 *Cliente:* ${nombre}%0A`;
-        mensajeWhatsApp += `📧 *Email:* ${email}%0A`;
-        mensajeWhatsApp += `📱 *Teléfono:* ${telefono}%0A%0A`;
-        mensajeWhatsApp += `🛏️ *Tipo de habitación:* ${habitacion}%0A`;
-        mensajeWhatsApp += `👥 *Adultos:* ${adultos}%0A`;
+        let mensajeWhatsApp = `*RESERVA HOTEL LOS TARCOSS*%0A%0A`;
+        mensajeWhatsApp += `*Cliente:* ${nombres} ${apellidos}%0A`;
+        mensajeWhatsApp += `*Email:* ${email}%0A`;
+        mensajeWhatsApp += `*Teléfono:* ${countryCode}${telefono}%0A%0A`;
+        mensajeWhatsApp += `*Tipo de habitación:* ${habitacion}%0A`;
+        mensajeWhatsApp += `*Adultos:* ${adultos}%0A`;
         if (ninos > 0) {
-            mensajeWhatsApp += `🧒 *Niños:* ${ninos}%0A`;
+            mensajeWhatsApp += `*Niños:* ${ninos}%0A`;
         }
-        mensajeWhatsApp += `%0A`;
-        mensajeWhatsApp += `📅 *Fecha de llegada:* ${fechaLlegadaFormateada}%0A`;
-        mensajeWhatsApp += `📅 *Fecha de salida:* ${fechaSalidaFormateada}%0A%0A`;
-        
+        mensajeWhatsApp += `*Desayuno:* ${desayuno}%0A%0A`;
+        mensajeWhatsApp += `*Fecha de llegada:* ${fechaLlegadaFormateada}%0A`;
+        mensajeWhatsApp += `*Fecha de salida:* ${fechaSalidaFormateada}%0A%0A`;
+
         if (serviciosSeleccionados.length > 0) {
-            mensajeWhatsApp += `✨ *Servicios adicionales solicitados:*%0A`;
+            mensajeWhatsApp += `*Servicios adicionales solicitados:*%0A`;
             serviciosSeleccionados.forEach(servicio => {
                 mensajeWhatsApp += `• ${servicio}%0A`;
             });
             mensajeWhatsApp += `%0A`;
         }
-        
+
         if (mensaje.trim() !== '') {
-            mensajeWhatsApp += `💬 *Mensaje adicional:*%0A${mensaje}%0A%0A`;
+            mensajeWhatsApp += `*Mensaje adicional:*%0A${mensaje}%0A%0A`;
         }
-        
-        mensajeWhatsApp += `¡Espero su confirmación! 😊`;
-        
+
+        mensajeWhatsApp += `¡Espero su confirmación!`;
+
         // Crear el enlace de WhatsApp
         const numeroWhatsApp = '62892056';
         const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeWhatsApp}`;
-        
+
         // Abrir WhatsApp
         window.open(enlaceWhatsApp, '_blank');
     });
-    
+
     // Establecer fecha mínima como hoy
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('llegada').min = today;
     document.getElementById('salida').min = today;
-    
+
     // Actualizar fecha mínima de salida cuando cambie la fecha de llegada
-    document.getElementById('llegada').addEventListener('change', function() {
+    document.getElementById('llegada').addEventListener('change', function () {
         const llegada = this.value;
         if (llegada) {
             const minSalida = new Date(llegada);
