@@ -34,7 +34,17 @@
   <meta property="twitter:image"
     content="https://lh3.googleusercontent.com/aida-public/AB6AXuDrVn8MLSN5GWfKMSLe6rfbFLm2A_V4hDp4NXwlw4RWeTqQevjPxmyZZdt3J16Ec74rXag8h3GgQTA_z6Ah8l-7cG0bUaDyz0R8j0RXuLKZty8q-gC39UKoZyNTy00vwpCCjKcGAohFgDFBj8caoarubNUQlpzBKFvRXSc3nKtEUASwBrDgK3IiseD9UQP9OkJyIvHBEXvLGsC_amJXtqrldHccT-iB5AUR-FLzSCDn2WwKc3vhYUGDR1b1Gcg4yNqPjTmcx0ezLq8" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  
+  {% if GOOGLE_ANALYTICS_KEY %}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS_KEY }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ GOOGLE_ANALYTICS_KEY }}');
+  </script>
+  {% endif %}
   <style type="text/tailwindcss">
     :root {
         --primary-color: #9d30ce;
@@ -742,6 +752,7 @@
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+    
   </div>
 </body>
 
