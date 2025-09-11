@@ -1,197 +1,210 @@
-{% extends 'core/base.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'core/base.html' %} {% load static %} {% block content %}
 <style>
-    html { 
-        background: black; 
-    }
-    
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        grid-gap: 2px;
-        grid-auto-rows: min-max(80px, auto);
-        grid-auto-flow: dense;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-    
-    .card { 
-        min-height: 100px; 
-        background-size: cover; 
-        background-position: 50% 50%;
-        cursor: pointer;
-    }
-    
-    .span-2 { 
-        grid-column-end: span 2; 
-        grid-row-end: span 2; 
-        min-height: 200px; 
-    }
-    
-    .span-3 { 
-        grid-column-end: span 3; 
-        grid-row-end: span 3; 
-        min-height: 400px; 
-    }
+  html {
+    background: black;
+  }
 
-    /* Modal styles */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        padding-top: 60px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.9);
-    }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 2px;
+    grid-auto-rows: min-max(80px, auto);
+    grid-auto-flow: dense;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
 
-    .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-    }
+  .card {
+    min-height: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+    cursor: pointer;
+  }
 
-    .close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
+  .span-2 {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+    min-height: 200px;
+  }
 
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
+  .span-3 {
+    grid-column-end: span 3;
+    grid-row-end: span 3;
+    min-height: 400px;
+  }
 
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -50px;
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-        -webkit-user-select: none;
-    }
+  /* Modal styles - SOLUCION PARA CENTRADO */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Usamos flexbox para centrar perfectamente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-    }
+  .modal.hidden {
+    display: none;
+  }
 
-    .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
-    }
+  .modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    /* Eliminamos margin auto ya que flexbox se encarga del centrado */
+  }
+
+  .close {
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1001;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 1001;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 </style>
 
 <div class="grid" id="imageGrid">
-    <!-- Las imágenes se generarán aquí con JavaScript -->
+  <!-- Las imágenes se generarán aquí con JavaScript -->
 </div>
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="myModal" class="modal hidden">
   <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
+  <img class="modal-content" id="img01" />
   <a class="prev">&#10094;</a>
   <a class="next">&#10095;</a>
 </div>
 
-
 <script>
-    // Función de selección aleatoria ponderada
-    function weightedRand(spec) {
-        var i, sum = 0, r = Math.random();
-        for (i in spec) {
-            sum += spec[i];
-            if (r <= sum) return i;
-        }
-    };
+  // Función de selección aleatoria ponderada
+  function weightedRand(spec) {
+      var i, sum = 0, r = Math.random();
+      for (i in spec) {
+          sum += spec[i];
+          if (r <= sum) return i;
+      }
+  };
 
-    var imageNames = {{ image_names|safe }};
-    var gridContainer = document.getElementById('imageGrid');
-    var imageUrls = [];
-    var currentImageIndex;
+  var imageNames = {{ image_names|safe }};
+  var gridContainer = document.getElementById('imageGrid');
+  var imageUrls = [];
+  var currentImageIndex;
 
-    // Generar el grid
-    for (var i = 0; i < imageNames.length; i++) {
-        var span = weightedRand({1: 0.7, 2: 0.2, 3: 0.1});
-        var imageName = imageNames[i];
-        var url = "{% static 'images/galeria/' %}" + imageName;
-        imageUrls.push(url);
-        
-        var div = document.createElement('div');
-        div.style.backgroundImage = "url(" + url + ")";
-        div.className = 'card span-' + span;
-        div.setAttribute('data-index', i);
-        
-        div.onclick = function() {
-            openModal(parseInt(this.getAttribute('data-index')));
-        };
-        
-        gridContainer.appendChild(div);
-    }
+  // Generar el grid
+  for (var i = 0; i < imageNames.length; i++) {
+      var span = weightedRand({1: 0.7, 2: 0.2, 3: 0.1});
+      var imageName = imageNames[i];
+      var url = "{% static 'images/galeria/' %}" + imageName;
+      imageUrls.push(url);
 
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    var span = document.getElementsByClassName("close")[0];
-    var prev = document.getElementsByClassName("prev")[0];
-    var next = document.getElementsByClassName("next")[0];
+      var div = document.createElement('div');
+      div.style.backgroundImage = "url(" + url + ")";
+      div.className = 'card span-' + span;
+      div.setAttribute('data-index', i);
 
-    function openModal(index) {
-        currentImageIndex = index;
-        modal.style.display = "block";
-        modalImg.src = imageUrls[currentImageIndex];
-    }
+      div.onclick = function() {
+          openModal(parseInt(this.getAttribute('data-index')));
+      };
 
-    function closeModal() {
-        modal.style.display = "none";
-    }
+      gridContainer.appendChild(div);
+  }
 
-    span.onclick = closeModal;
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+  var span = document.getElementsByClassName("close")[0];
+  var prev = document.getElementsByClassName("prev")[0];
+  var next = document.getElementsByClassName("next")[0];
 
-    prev.onclick = function() {
-        currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
-        modalImg.src = imageUrls[currentImageIndex];
-    }
+  function openModal(index) {
+      currentImageIndex = index;
+      modal.classList.remove("hidden");
+      modalImg.src = imageUrls[currentImageIndex];
+  }
 
-    next.onclick = function() {
-        currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
-        modalImg.src = imageUrls[currentImageIndex];
-    }
-    
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
+  function closeModal() {
+      modal.classList.add("hidden");
+  }
 
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
-        if (event.key === 'ArrowLeft') {
-            prev.onclick();
-        }
-        if (event.key === 'ArrowRight') {
-            next.onclick();
-        }
-    });
+  span.onclick = closeModal;
+
+  prev.onclick = function() {
+      currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
+      modalImg.src = imageUrls[currentImageIndex];
+  }
+
+  next.onclick = function() {
+      currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+      modalImg.src = imageUrls[currentImageIndex];
+  }
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          closeModal();
+      }
+  }
+
+  document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+          closeModal();
+      }
+      if (event.key === 'ArrowLeft') {
+          prev.onclick();
+      }
+      if (event.key === 'ArrowRight') {
+          next.onclick();
+      }
+  });
 </script>
-{% endblock %}
+{% endblock %}

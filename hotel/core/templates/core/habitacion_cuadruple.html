@@ -76,7 +76,7 @@
                   </div>
                   <div class="text-stone-700">
                     <div class="font-bold text-xs xl:text-sm">Capacidad</div>
-                    <div class="text-xs">2 personas</div>
+                    <div class="text-xs">4 personas</div>
                   </div>
                 </div>
 
@@ -204,8 +204,8 @@
                         <div>
                           <div class="mb-2 flex items-center justify-between">
                             <h3
-                              class="text-start text-2xl font-bold text-gray-900"
-                            >1 cama de 2 plazas  </br>+ 2 camas de plaza y media
+                              class="text-left text-2xl font-bold text-gray-900"
+                            >Cuádruple con 1 cama de 2 plazas </br>+ 2 camas de plaza y media
                           </h3>
                             <span
                               class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
@@ -232,13 +232,75 @@
                                   class="fa-solid fa-bed text-[var(--primary-color)]"
                                 ></i>
                               </div>
-                              <span>2 camas de dos plazas</span>
+                              <span>1 cama de 2 plazas + 2 camas de plaza y media</span>
                             </div>
                           </div>
                         </div>
                         <div class="flex items-center justify-between">
                           <p class="text-2xl font-bold text-gray-900">
                             Bs.280<span
+                              class="text-base font-normal text-gray-500"
+                              >/noche</span
+                            >
+                          </p>
+                          <a
+                            href="{% url 'reservas' %}"
+                            class="rounded-lg px-5 py-2.5 text-sm font-semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
+                          >
+                            Reservar
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="room-card privado-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
+                      data-category="privado"
+                    >
+                      <div
+                        class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA81R_ZPq0SXeKBjdBH2nIKTSw3QGdm-uw2tz0dDrnuFcnBvNXEKQoy_mBEHP0Vn3yOfsK5Jo6a0XAqnkyYZOBU2S4b_I42m3A8UHceL0mVIOiEe7en8nhwuee8YrjkA_4usbHDg0N-B2f9r9OejCT-0NIlHzSY-EJVSQ7PGpu6pH2R2GoDUtUg8OWafh-pdSCjgDd5rDr3mDBjKbV2pbDHtfoXLgJ-WAoTdjKbg5OLQDOVfxYfYlFheTepcecL69kCBWolrd7T210');
+                        "
+                      ></div>
+                      <div class="flex flex-1 flex-col justify-between p-6">
+                        <div>
+                          <div class="mb-2 flex items-center justify-between">
+                            <h3
+                              class="text-left text-2xl font-bold text-gray-900"
+                            >Cuádruple con 2 camas de dos plazas 
+                          </h3>
+                            <span
+                              class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
+                              >Baño privado</span
+                            >
+                          </div>
+                          <p class="mb-4 text-left text-gray-600">
+                            Esta habitación ofrece comodidad y
+                            funcionalidad para grupos pequeños 
+                            o familias. Con dos camas matrimoniales, 
+                            permite un descanso reparador en un espacio 
+                            cálido y funcional, complementado con baño
+                            privado para mayor privacidad y confort.
+                          </p>
+                          <div
+                            class="mb-4 flex flex-col gap-3 text-sm text-gray-700"
+                          >
+                            <!-- Camas -->
+                            <div class="flex items-center gap-2">
+                              <div
+                                class="flex items-center justify-center rounded-full w-10 h-10 border-2 border-[var(--primary-color)]"
+                              >
+                                <i
+                                  class="fa-solid fa-bed text-[var(--primary-color)]"
+                                ></i>
+                              </div>
+                              <span>2 camas de dos plazas</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                          <p class="text-2xl font-bold text-gray-900">
+                            Bs.320<span
                               class="text-base font-normal text-gray-500"
                               >/noche</span
                             >
@@ -266,8 +328,8 @@
                       <div class="flex flex-1 flex-col justify-between p-6">
                         <div>
                           <div class="mb-2 flex items-center justify-between">
-                            <h3 class="text-2xl font-bold text-gray-900">
-                              Triple con 1 cama de 2 plazas </br>+ 1 cama de plaza y media
+                            <h3 class="text-left text-2xl font-bold text-gray-900">
+                              Cuádruple con 2 camas de 2 plazas </br> <span class= "text-xl text-left font-semibold text-gray-900">Con vista a la ciudad</span>
                             </h3>
                             <span
                               class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
@@ -275,14 +337,86 @@
                             >
                           </div>
                           <p class="mb-4 text-left text-gray-600">
-                            Esta habitación es ideal para grupos pequeños o
-                            familias que buscan comodidad y funcionalidad. Con
-                            una cama matrimonial y una cama de plaza y media,
-                            ofrece un ambiente cálido y funcional,
-                            proporcionando un espacio cómodo y agradable para
-                            descansar y disfrutar de la estadía
+                            Habitación elegante y bien distribuida, 
+                            pensada para grupos pequeños o familias. 
+                            Las dos camas matrimoniales y la vista hacia 
+                            la calle aportan luminosidad y amplitud visual, 
+                            mientras que el espacio asegura comodidad y 
+                            funcionalidad durante toda la estancia.
                           </p>
 
+                          <div
+                            class="mb-4 flex flex-col gap-3 text-sm text-gray-700"
+                          >
+                            <!-- Camas -->
+                            <div class="flex items-center gap-2">
+                              <div
+                                class="flex items-center justify-center rounded-full w-10 h-10 border-2 border-[var(--primary-color)]"
+                              >
+                                <i
+                                  class="fa-solid fa-bed text-[var(--primary-color)]"
+                                ></i>
+                              </div>
+                              <span>2 camas de dos plazas</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                              <div
+                                class="flex items-center justify-center rounded-full w-10 h-10 border-2 border-[var(--primary-color)]"
+                              >
+                                <i
+                                  class="fa-solid fa-tree-city text-[var(--primary-color)]"
+                                ></i>
+                              </div>
+                              <span>Con vista a la ciudad</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                          <p class="text-2xl font-bold text-gray-900">
+                            Bs.320<span
+                              class="text-base font-normal text-gray-500"
+                              >/noche</span
+                            >
+                          </p>
+                          <a
+                            href="{% url 'reservas' %}"
+                            class="rounded-lg px-5 py-2.5 text-sm font-semibold semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
+                          >
+                            Reservar
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="room-card compartido-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
+                      data-category="compartido"
+                    >
+                      <div
+                        class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrv8SxKEYYNJE6Py0AVDfj8dvf_jsR4WbBkOCl3mMVrvf8NiT3BUAx1dp0ty8tIkOxfhRBODt2yRLYc5t64yd32Q9vDZG8tAaig3R6AhyXk683DnGJbhtWaYPfyM5QDZQUT0UcjOdpSS3Q7q9W8F5xWXYAm7Rs92XcLRmYSANnCJeENIHm60qgKOGTinIIw6ENaizI0H_rWEdVoV7VtGuEvHOpb3rQGp-fzS4oS9rGWOlKxHnEiquMNVwRQfAGdnMMRd60V-ZX46c');
+                        "
+                      ></div>
+                      <div class="flex flex-1 flex-col justify-between p-6">
+                        <div>
+                          <div class="mb-2 flex items-center justify-between">
+                            <h3 class="text-left text-2xl font-bold text-gray-900">
+                              Cuádruple con 2 camas de 2 plazas
+                            </h3>
+                            <span
+                              class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
+                              >Baño Compartido</span
+                            >
+                          </div>
+                          <p class="mb-4 text-left text-gray-600">
+                            Habitación práctica y cómoda, 
+                            con dos camas matrimoniales, ideal 
+                            para familias o grupos pequeños. 
+                            Su distribución permite un descanso 
+                            relajado y funcional, ofreciendo un 
+                            espacio donde la comodidad y la practicidad 
+                            se combinan a la perfección.
+                          </p>
                           <div
                             class="mb-4 flex flex-col gap-3 text-sm text-gray-700"
                           >
@@ -301,7 +435,7 @@
                         </div>
                         <div class="flex items-center justify-between">
                           <p class="text-2xl font-bold text-gray-900">
-                            Bs.240<span
+                            Bs.280<span
                               class="text-base font-normal text-gray-500"
                               >/noche</span
                             >
@@ -329,8 +463,8 @@
                       <div class="flex flex-1 flex-col justify-between p-6">
                         <div>
                           <div class="mb-2 flex items-center justify-between">
-                            <h3 class="text-2xl font-bold text-gray-900">
-                              Triple con 3 camas de plaza y media
+                            <h3 class="text-left text-2xl font-bold text-gray-900">
+                              Cuádruple con 1 cama de 2 plazas </br>+ 1 litera
                             </h3>
                             <span
                               class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
@@ -338,14 +472,11 @@
                             >
                           </div>
                           <p class="mb-4 text-left text-gray-600">
-                            Concebida para pequeños grupos o familias que buscan
-                            un espacio práctico y cómodo, esta habitación está
-                            equipada con tres camas de plaza y media que
-                            garantizan un descanso individual y reparador. Su
-                            ambiente cálido y funcional la convierte en una
-                            opción ideal para quienes desean compartir momentos
-                            agradables, sin renunciar a la comodidad de una
-                            estadía acogedora
+                            Con una cama matrimonial y una litera, 
+                            esta habitación es funcional y acogedora. 
+                            Perfecta para familias o grupos pequeños, 
+                            combina comodidad y practicidad para una 
+                            estancia agradable y sin complicaciones.
                           </p>
                           <div
                             class="mb-4 flex flex-col gap-3 text-sm text-gray-700"
@@ -359,13 +490,13 @@
                                   class="fa-solid fa-bed text-[var(--primary-color)]"
                                 ></i>
                               </div>
-                              <span>2 camas de dos plazas</span>
+                              <span>1 cama de 2 plazas + 1 litera</span>
                             </div>
                           </div>
                         </div>
                         <div class="flex items-center justify-between">
                           <p class="text-2xl font-bold text-gray-900">
-                            Bs.240<span
+                            Bs.280<span
                               class="text-base font-normal text-gray-500"
                               >/noche</span
                             >
