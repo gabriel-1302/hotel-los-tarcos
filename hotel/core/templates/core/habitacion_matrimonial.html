@@ -23,7 +23,7 @@
             <!-- Columna derecha -->
             <div class="relative z-10 overflow-hidden min-h-[32rem]">
               <!-- Contenedor titulo y descripcion -->
-              <div class="ml-8">
+              <div class="ml-2 sm:ml-2 lg:ml-8 xl:ml-8 2xl:ml-8">
                 <h2
                   class="text-stone-900 text-3xl font-bold tracking-tight lg:text-3xl mt-6 lg:mt-10"
                 >
@@ -59,51 +59,56 @@
                 </div>
               </div>
               <!-- Contenedor iconos caracteristicas-->
-              <!-- Contenedor iconos características - Versión horizontal (pantallas grandes) -->
               <div
-                class="icons-horizontal hidden xl:flex left-0 w-full h-24 z-0 items-start justify-between px-12 gap-2 py-6"
+                class="flex flex-wrap justify-center xl:justify-between items-start gap-6 xl:gap-2 w-full px-6 xl:px-12 py-6"
               >
                 <!-- Icono Persona -->
-                <div class="flex flex-col items-center text-center w-20">
+                <div
+                  class="flex flex-col items-center text-center w-16 xl:w-20"
+                >
                   <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-14 h-14 flex items-center justify-center mb-2"
+                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 xl:w-14 xl:h-14 flex items-center justify-center mb-2"
                   >
                     <i
-                      class="fa-solid fa-person text-2xl text-[var(--primary-color)]"
+                      class="fa-solid fa-person text-xl xl:text-2xl text-[var(--primary-color)]"
                     ></i>
                   </div>
                   <div class="text-stone-700">
-                    <div class="font-bold text-sm">Capacidad</div>
+                    <div class="font-bold text-xs xl:text-sm">Capacidad</div>
                     <div class="text-xs">2 personas</div>
                   </div>
                 </div>
 
                 <!-- Icono TV -->
-                <div class="flex flex-col items-center text-center w-20">
+                <div
+                  class="flex flex-col items-center text-center w-16 xl:w-20"
+                >
                   <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-14 h-14 flex items-center justify-center mb-2"
+                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 xl:w-14 xl:h-14 flex items-center justify-center mb-2"
                   >
                     <i
-                      class="fa-solid fa-tv text-2xl text-[var(--primary-color)]"
+                      class="fa-solid fa-tv text-xl xl:text-2xl text-[var(--primary-color)]"
                     ></i>
                   </div>
                   <div class="text-stone-700">
-                    <div class="font-bold text-sm">Smart TV</div>
+                    <div class="font-bold text-xs xl:text-sm">Smart TV</div>
                     <div class="text-xs">40"</div>
                   </div>
                 </div>
 
                 <!-- Icono Ducha -->
-                <div class="flex flex-col items-center text-center w-20">
+                <div
+                  class="flex flex-col items-center text-center w-16 xl:w-20"
+                >
                   <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-14 h-14 flex items-center justify-center mb-2"
+                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 xl:w-14 xl:h-14 flex items-center justify-center mb-2"
                   >
                     <i
-                      class="fa-solid fa-shower text-2xl text-[var(--primary-color)]"
+                      class="fa-solid fa-shower text-xl xl:text-2xl text-[var(--primary-color)]"
                     ></i>
                   </div>
                   <div class="text-stone-700">
-                    <div class="font-bold text-sm leading-tight">
+                    <div class="font-bold text-xs xl:text-sm leading-tight">
                       Ducha Caliente
                     </div>
                     <div class="text-xs">Termostato</div>
@@ -111,102 +116,18 @@
                 </div>
 
                 <!-- Icono Cama -->
-                <div class="flex flex-col items-center text-center w-20">
+                <div
+                  class="flex flex-col items-center text-center w-16 xl:w-20"
+                >
                   <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-14 h-14 flex items-center justify-center mb-2"
+                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 xl:w-14 xl:h-14 flex items-center justify-center mb-2"
                   >
                     <i
-                      class="fa-solid fa-bed text-2xl text-[var(--primary-color)]"
+                      class="fa-solid fa-bed text-xl xl:text-2xl text-[var(--primary-color)]"
                     ></i>
                   </div>
                   <div class="text-stone-700">
-                    <div class="font-bold text-sm leading-tight">Colchón</div>
-                    <div class="text-xs">Importado</div>
-                    <div class="text-xs">Alta Calidad</div>
-                  </div>
-                </div>
-
-                <!-- Icono Jabón -->
-                <div class="flex flex-col items-center text-center w-20">
-                  <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-14 h-14 flex items-center justify-center mb-2"
-                  >
-                    <i
-                      class="fa-solid fa-pump-soap text-2xl text-[var(--primary-color)]"
-                    ></i>
-                  </div>
-                  <div class="text-stone-700">
-                    <div class="font-bold text-xs leading-tight">
-                      <div>Jabón</div>
-                      <div>Shampoo</div>
-                      <div>Toallas</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Contenedor iconos características - Versión distribuida (pantallas medianas/pequeñas) -->
-              <div
-                class="icons-distributed xl:hidden flex flex-wrap justify-center items-start gap-6 mt-4 px-6"
-              >
-                <!-- Icono Persona -->
-                <div class="flex flex-col items-center text-center w-16">
-                  <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 flex items-center justify-center mb-2"
-                  >
-                    <i
-                      class="fa-solid fa-person text-xl text-[var(--primary-color)]"
-                    ></i>
-                  </div>
-                  <div class="text-stone-700">
-                    <div class="font-bold text-xs">Capacidad</div>
-                    <div class="text-xs">2 personas</div>
-                  </div>
-                </div>
-
-                <!-- Icono TV -->
-                <div class="flex flex-col items-center text-center w-16">
-                  <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 flex items-center justify-center mb-2"
-                  >
-                    <i
-                      class="fa-solid fa-tv text-xl text-[var(--primary-color)]"
-                    ></i>
-                  </div>
-                  <div class="text-stone-700">
-                    <div class="font-bold text-xs">Smart TV</div>
-                    <div class="text-xs">40"</div>
-                  </div>
-                </div>
-
-                <!-- Icono Ducha -->
-                <div class="flex flex-col items-center text-center w-16">
-                  <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 flex items-center justify-center mb-2"
-                  >
-                    <i
-                      class="fa-solid fa-shower text-xl text-[var(--primary-color)]"
-                    ></i>
-                  </div>
-                  <div class="text-stone-700">
-                    <div class="font-bold text-xs leading-tight">
-                      Ducha Caliente
-                    </div>
-                    <div class="text-xs">Termostato</div>
-                  </div>
-                </div>
-
-                <!-- Icono Cama -->
-                <div class="flex flex-col items-center text-center w-16">
-                  <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 flex items-center justify-center mb-2"
-                  >
-                    <i
-                      class="fa-solid fa-bed text-xl text-[var(--primary-color)]"
-                    ></i>
-                  </div>
-                  <div class="text-stone-700">
-                    <div class="font-bold text-xs leading-tight">
+                    <div class="font-bold text-xs xl:text-sm leading-tight">
                       Colchón Premium
                     </div>
                     <div class="text-xs">Alta calidad</div>
@@ -214,16 +135,18 @@
                 </div>
 
                 <!-- Icono Jabón -->
-                <div class="flex flex-col items-center text-center w-16">
+                <div
+                  class="flex flex-col items-center text-center w-16 xl:w-20"
+                >
                   <div
-                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 flex items-center justify-center mb-2"
+                    class="bg-white border-2 border-[var(--primary-color)] rounded-full w-12 h-12 xl:w-14 xl:h-14 flex items-center justify-center mb-2"
                   >
                     <i
-                      class="fa-solid fa-pump-soap text-xl text-[var(--primary-color)]"
+                      class="fa-solid fa-pump-soap text-xl xl:text-2xl text-[var(--primary-color)]"
                     ></i>
                   </div>
                   <div class="text-stone-700">
-                    <div class="font-bold text-xs">Amenities</div>
+                    <div class="font-bold text-xs xl:text-sm">Amenities</div>
                     <div class="text-xs leading-tight">
                       <div>Jabón</div>
                       <div>Shampoo</div>
@@ -234,7 +157,7 @@
               </div>
             </div>
           </div>
-          <!-- Espacio tipos de habitaciones-->
+          <!-- Tipos de habitaciones-->
           <div>
             <main class="container mx-auto flex-1 px-4 py-12 sm:px-6 lg:px-8">
               <div class="mx-auto max-w-5xl">
@@ -280,17 +203,22 @@
                         <div>
                           <div class="mb-2 flex items-center justify-between">
                             <h3 class="text-2xl font-bold text-gray-900">
-                              Standard Room
+                              Matrimonial con cama doble
                             </h3>
                             <span
                               class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
-                              >Privado</span
+                              >Baño Privado</span
                             >
                           </div>
-                          <p class="mb-4 text-gray-600">
-                            A cozy and comfortable room featuring a queen-sized
-                            bed, a private bathroom, and a beautiful city view.
-                            Perfect for solo travelers or couples.
+                          <p class="mb-4 text-left text-gray-600">
+                            Un espacio diseñado para el descanso en pareja o
+                            para quienes buscan mayor comodidad y privacidad.
+                            Esta habitación matrimonial, ubicada en el cuarto
+                            piso, combina un ambiente cálido y acogedor con el
+                            confort necesario para una estadía placentera. Su
+                            cama de dos plazas, junto con el baño privado, la
+                            convierten en una opción ideal para disfrutar de
+                            tranquilidad y bienestar en el corazón de Sucre.
                           </p>
                           <div
                             class="mb-4 flex flex-col gap-3 text-sm text-gray-700"
@@ -304,33 +232,23 @@
                                   class="fa-solid fa-bed text-[var(--primary-color)]"
                                 ></i>
                               </div>
-                              <span>2 camas de dos plazas</span>
-                            </div>
-                            <!-- Vista a la ciudad -->
-                            <div class="flex items-center gap-2">
-                              <div
-                                class="flex items-center justify-center rounded-full w-10 h-10 border-2 border-[var(--primary-color)]"
-                              >
-                                <i
-                                  class="fa-solid fa-tree-city text-[var(--primary-color)]"
-                                ></i>
-                              </div>
-                              <span>Con vista a la ciudad</span>
+                              <span>1 cama de dos plazas</span>
                             </div>
                           </div>
                         </div>
                         <div class="flex items-center justify-between">
                           <p class="text-2xl font-bold text-gray-900">
-                            Bs.150<span
+                            Bs.220<span
                               class="text-base font-normal text-gray-500"
                               >/noche</span
                             >
                           </p>
-                          <button
+                          <a
+                            href="{% url 'reservas' %}"
                             class="rounded-lg px-5 py-2.5 text-sm font-semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
                           >
                             Reservar
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -349,80 +267,49 @@
                         <div>
                           <div class="mb-2 flex items-center justify-between">
                             <h3 class="text-2xl font-bold text-gray-900">
-                              Deluxe Room
+                              Matrimonial con cama doble
                             </h3>
                             <span
                               class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
-                              >Compartido</span
+                              >Baño Compartido</span
                             >
                           </div>
-                          <p class="mb-4 text-gray-600">
-                            A spacious and elegant room with a king-sized bed, a
-                            private balcony with stunning views, and a range of
-                            premium amenities for an unforgettable stay.
+                          <p class="mb-4 text-left text-gray-600">
+                            Habitación matrimonial perfecta para parejas que
+                            buscan un espacio íntimo y práctico. Su diseño
+                            funcional y su equipamiento permiten un descanso
+                            tranquilo y reparador, manteniendo la comodidad
+                            dentro de un ambiente sencillo pero acogedor.
                           </p>
                           <div
-                            class="mb-4 flex flex-wrap gap-3 text-sm text-gray-700"
-                          ></div>
+                            class="mb-4 flex flex-col gap-3 text-sm text-gray-700"
+                          >
+                            <!-- Camas -->
+                            <div class="flex items-center gap-2">
+                              <div
+                                class="flex items-center justify-center rounded-full w-10 h-10 border-2 border-[var(--primary-color)]"
+                              >
+                                <i
+                                  class="fa-solid fa-bed text-[var(--primary-color)]"
+                                ></i>
+                              </div>
+                              <span>1 cama de dos plazas</span>
+                            </div>
+                          </div>
                         </div>
                         <div class="flex items-center justify-between">
                           <p class="text-2xl font-bold text-gray-900">
-                            Bs.250<span
+                            Bs.180<span
                               class="text-base font-normal text-gray-500"
                               >/noche</span
                             >
                           </p>
-                          <button
+                          <a
+                            href="{% url 'reservas' %}"
                             class="rounded-lg px-5 py-2.5 text-sm font-semibold semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
                           >
                             Reservar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="room-card compartido-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
-                      data-category="compartido"
-                    >
-                      <div
-                        class="h-64 w-full bg-cover bg-center md:h-auto md:w-2/5"
-                        style="
-                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFIN0xowXjAmrVTzqWsvorqdCFZFcp2Loex3c11cjYaivm1P7p0gVUfaF594bo8VRrmdq9eE3yI-75iII05c1p6kcgFKMfG0WNq5JXlZN3Smmp_rJj_fZu0hmeRZg6SWObci22rZClGTFXiVH1AYJhEiugd79RNSmQjV_OG8EJOHqPSL65ov6OILwRSuzB6HqozVInWH2RrtBFzT4PLhI5lnR8THEyzsCdkEVoyUImtLL2eJ1T57naGieXtjKKhMk3S6LYbirRnJU');
-                        "
-                      ></div>
-                      <div class="flex flex-1 flex-col justify-between p-6">
-                        <div>
-                          <div class="mb-2 flex items-center justify-between">
-                            <h3 class="text-2xl font-bold text-gray-900">
-                              Luxury Suite
-                            </h3>
-                            <span
-                              class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-[var(--primary-color)]"
-                              >Compartido</span
-                            >
-                          </div>
-                          <p class="mb-4 text-gray-600">
-                            Experience ultimate luxury in our suite, featuring a
-                            separate living area, a plush king-sized bed, and
-                            panoramic views of the entire city.
-                          </p>
-                          <div
-                            class="mb-4 flex flex-wrap gap-3 text-sm text-gray-700"
-                          ></div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <p class="text-2xl font-bold text-gray-900">
-                            Bs.350<span
-                              class="text-base font-normal text-gray-500"
-                              >/noche</span
-                            >
-                          </p>
-                          <button
-                            class="rounded-lg px-5 py-2.5 text-sm font-semibold semibold text-black border border-black hover:bg-[var(--primary-color)] hover:text-white hover:border-white transition-colors"
-                          >
-                            Reservar
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
