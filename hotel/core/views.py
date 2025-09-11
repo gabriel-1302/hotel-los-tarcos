@@ -29,11 +29,7 @@ def paquetes(request):
 
 #Habitaciones
 
-def habitacion_individual(request):
-    return render(request, 'core/habitacion_individual.html')
 
-def habitacion_doble(request):
-    return render(request, 'core/habitacion_doble.html')
 
 def habitacion_matrimonial(request):
     return render(request, 'core/habitacion_matrimonial.html')

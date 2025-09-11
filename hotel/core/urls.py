@@ -6,9 +6,6 @@ urlpatterns = [
 
     path('habitaciones/', views.habitaciones, name='habitaciones'),
 
-
-    path('habitaciones/individual/', views.habitacion_individual, name='habitacion_individual'),
-    path('habitaciones/doble/', views.habitacion_doble, name='habitacion_doble'),
     path('habitaciones/matrimonial/', views.habitacion_matrimonial, name='habitacion_matrimonial'),
     path('habitaciones/triple/', views.habitacion_triple, name='habitacion_triple'),
     path('habitaciones/cuadruple/', views.habitacion_cuadruple, name='habitacion_cuadruple'),
