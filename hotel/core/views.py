@@ -19,8 +19,22 @@ def reservas(request):
     return render(request, 'core/reservas.html')
 
 def galeria(request):
-    image_path = os.path.join(settings.BASE_DIR, 'core', 'static', 'images')
-    image_names = [f for f in os.listdir(image_path) if os.path.isfile(os.path.join(image_path, f))]
+    image_path = os.path.join(settings.BASE_DIR, 'core', 'static', 'images', 'galeria')
+    image_names = []
+    
+    try:
+        if os.path.exists(image_path):
+            # Filtrar solo archivos de imagen
+            allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'}
+            image_names = [
+                f for f in os.listdir(image_path) 
+                if os.path.isfile(os.path.join(image_path, f)) and 
+                os.path.splitext(f.lower())[1] in allowed_extensions
+            ]
+    except OSError:
+        # Manejar errores de permisos o directorio no accesible
+        pass
+    
     return render(request, 'core/galeria.html', {'image_names': image_names})
 
 def paquetes(request):

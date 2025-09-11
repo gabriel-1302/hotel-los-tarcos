@@ -133,7 +133,7 @@
     for (var i = 0; i < imageNames.length; i++) {
         var span = weightedRand({1: 0.7, 2: 0.2, 3: 0.1});
         var imageName = imageNames[i];
-        var url = "{% static 'images/' %}" + imageName;
+        var url = "{% static 'images/galeria/' %}" + imageName;
         imageUrls.push(url);
         
         var div = document.createElement('div');
