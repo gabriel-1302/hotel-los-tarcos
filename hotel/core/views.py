@@ -4,6 +4,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.conf import settings
 import requests
+import json
 
 # Create your views here.
 def home(request):
@@ -46,7 +47,7 @@ def paquetes(request):
 
 
 def habitacion_matrimonial(request):
-    return render(request, 'core/habitacion_matrimonial.html')
+    return render(request, 'core/habitacion_matrimonial2.html')
 
 def habitacion_triple(request):
     return render(request, 'core/habitacion_triple.html')
