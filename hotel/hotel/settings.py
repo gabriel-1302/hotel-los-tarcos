@@ -62,6 +62,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.global_vars',
+       
             ],
         },
     },
@@ -125,3 +127,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyAUiYMazWUWPVY-HoauLzykeGX5Kpm-7z4'
+#api analitics
+GOOGLE_ANALYTICS_KEY = 'G-6LSQH5ENVE'
