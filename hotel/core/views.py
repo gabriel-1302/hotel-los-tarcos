@@ -47,7 +47,7 @@ def paquetes(request):
 
 
 def habitacion_matrimonial(request):
-    return render(request, 'core/habitacion_matrimonial2.html')
+    return render(request, 'core/habitacion_matrimonial.html')
 
 def habitacion_triple(request):
     return render(request, 'core/habitacion_triple.html')
