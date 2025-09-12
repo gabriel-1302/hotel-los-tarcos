@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-
+{% load static %}
 {% block content %}
 <main class="flex-1 bg-stone-100 py-12 sm:py-16">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@
         <div class="relative z-10 mb-16 bg-white p-8 rounded-xl shadow-lg">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
-                    <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                    <img src="{% static 'images/Triple_Privado_Vista/IMG_9642.avif' %}" 
                          alt="Interior de una habitación de hotel elegante y moderna" 
                          class="rounded-lg shadow-md w-full h-auto object-cover aspect-video">
                 </div>
@@ -39,8 +39,8 @@
             <!-- Habitación Matrimonial Card -->
             <a href="{% url 'habitacion_matrimonial' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
                 <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
+                        <img src="{% static 'images/Matrimonial_Privado/IMG_9716.avif'%}" alt="">
                     </div>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
@@ -58,8 +58,8 @@
             <!-- Habitación triple Card -->
             <a href="{% url 'habitacion_triple' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
                 <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
+                        <img src="{% static 'images/Triple_Privado_Vista/IMG_9641.jpg'%}" alt="">
                     </div>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
@@ -78,8 +78,8 @@
             <!-- Habitación cuadruple Card -->
             <a href="{% url 'habitacion_cuadruple' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
                 <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
+                        <img src="{% static 'images/Cuadruple_Privado_1_Doble_2_Simple/IMG_9464.jpg'%}" alt="">
                     </div>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
@@ -98,8 +98,8 @@
             <!-- Habitación quíntuple Card -->
             <a href="{% url 'habitacion_quintuple' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
                 <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
+                        <img src="{% static 'images/Quintuple_Vista/DSC_0027.avif'%}" alt="">
                     </div>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
@@ -119,8 +119,8 @@
             <!-- Habitación Sextuple Card -->
             <a href="{% url 'habitacion_sextuple' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
                 <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
+                        <img src="{% static 'images/Sextuple_1_Doble_2_Literas/IMG_9660.avif'%}" alt="">
                     </div>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">
@@ -139,8 +139,8 @@
             <!-- Habitación Septuple Card -->
             <a href="{% url 'habitacion_septuple' %}" class="relative block w-full h-[450px] bg-white shadow-lg rounded-xl overflow-hidden group">
                 <div class="absolute top-0 left-0 w-full h-3/5 transition-all duration-300 ease-in-out group-hover:top-[-15px]">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
+                        <img src="{% static 'images/Septuple/IMG_9542.jpg'%}" alt="">
                     </div>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full h-2/5 bg-white p-6 transition-all duration-300 ease-in-out group-hover:h-[45%] group-hover:pt-8">

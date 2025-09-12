@@ -14,10 +14,9 @@
                 class="absolute -left-4 -top-4 bottom-4 w-full bg-[var(--primary-color)] rounded-lg -rotate-2 z-0"
               ></div>
               <img
-                alt="Habitación Deluxe con Vista al Mar"
+                
                 class="relative w-full h-full object-cover rounded-lg z-10"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDst9R0YDJBImCXqG2OVAxW8wQVGI1ZjowjdwWrkQsg4_3N9BZawMU3kyJovYf9XoVpvGrsYjb2NlwWWSinSK6KkM-Jtbpz5kdM9QlcHL8mNqCbN8uGUKub_Vo4gTCochzcFSlxDVPTXFfRluM6QN248-UMgXlWVneZ8sWdIQrsbr6tup3hYRYhvnpWPB9i1N1iJLxqFTFyxjkuMoRcwhm4Wv3JXY1tnWVxVL4CXXu6nS1lJ7Es5b0npoBj5M8-x8_nAykp6q1Ao7U"
-              />
+                src="{% static 'images/Triple_Privado_Vista/IMG_9641.jpg'%}">
             </div>
 
             <!-- Columna derecha -->
@@ -196,9 +195,10 @@
                       <!-- CARRUSEL CON JAVASCRIPT PURO -->
                       <div class="relative h-64 w-full md:h-auto md:w-2/5 overflow-hidden" data-carousel="privado">
                         <div class="carousel-container flex transition-transform duration-300 ease-in-out h-full">
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_1/3.webp" %}')"></div>
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_1/3.webp" %}')"></div>
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_1/3.webp" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/Triple_Privado_Vista/IMG_9641.avif" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/Triple_Privado_Vista/IMG_9642.avif" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/Triple_Privado_Vista/IMG_9645.avif" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/Triple_Privado_Vista/IMG_9685.avif" %}')"></div>
                         </div>
 
                         <!-- Controles -->
@@ -216,6 +216,7 @@
                           <button onclick="goToSlide('privado', 0)" class="carousel-indicator w-3 h-3 rounded-full bg-white transition-all duration-200"></button>
                           <button onclick="goToSlide('privado', 1)" class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-200"></button>
                           <button onclick="goToSlide('privado', 2)" class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-200"></button>
+                          <button onclick="goToSlide('privado', 3)" class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-200"></button>
                         </div>
                       </div>
                       <div class="flex flex-1 flex-col justify-between p-6">
@@ -290,9 +291,8 @@
                       <!-- CARRUSEL CON JAVASCRIPT PURO -->
                       <div class="relative h-64 w-full md:h-auto md:w-2/5 overflow-hidden" data-carousel="compartido">
                         <div class="carousel-container flex transition-transform duration-300 ease-in-out h-full">
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_2/3.webp" %}')"></div>
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_2/3.webp" %}')"></div>
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_2/3.webp" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images\Triple_Compartido_1_Doble_1_Simple\DSC_0083.avif" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images\Triple_Compartido_1_Doble_1_Simple\DSC_0123.avif" %}')"></div>
                         </div>
 
                         <!-- Controles -->
@@ -309,7 +309,6 @@
                         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
                           <button onclick="goToSlide('compartido', 0)" class="carousel-indicator w-3 h-3 rounded-full bg-white transition-all duration-200"></button>
                           <button onclick="goToSlide('compartido', 1)" class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-200"></button>
-                          <button onclick="goToSlide('compartido', 2)" class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-200"></button>
                         </div>
                       </div>
                       <div class="flex flex-1 flex-col justify-between p-6">
@@ -367,14 +366,14 @@
 
                       <div
                       class="room-card compartido-room flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl md:flex-row"
-                      data-category="compartido2"
+                      data-category="compartido"
                     >
                       <!-- CARRUSEL CON JAVASCRIPT PURO -->
                       <div class="relative h-64 w-full md:h-auto md:w-2/5 overflow-hidden" data-carousel="compartido2">
                         <div class="carousel-container flex transition-transform duration-300 ease-in-out h-full">
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_2/3.webp" %}')"></div>
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_2/3.webp" %}')"></div>
-                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/habitaciones/matrimonial/tipo_2/3.webp" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/Triple_Compartido_3_Simple/IMG_9570.avif" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/Triple_Compartido_3_Simple/IMG_9565.avif" %}')"></div>
+                          <div class="carousel-slide min-w-full h-full bg-cover bg-center bg-gray-200" style="background-image: url('{% static "images/Triple_Compartido_3_Simple/IMG_9566.avif" %}')"></div>
                         </div>
 
                         <!-- Controles -->
@@ -613,6 +612,7 @@
     document.getElementById("filter-all").onclick = () => smoothFilter("all");
     document.getElementById("filter-privado").onclick = () => smoothFilter("privado");
     document.getElementById("filter-compartido").onclick = () => smoothFilter("compartido");
+    
   });
 
   // Debug: Verificar que las imágenes se cargan
