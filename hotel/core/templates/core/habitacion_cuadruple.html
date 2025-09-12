@@ -787,13 +787,7 @@
     const slides = document.querySelectorAll('.carousel-slide');
     slides.forEach((slide, index) => {
       const bgImage = slide.style.backgroundImage;
-      if (bgImage) {
-        const imageUrl = bgImage.slice(4, -1).replace(/"/g, "");
-        const img = new Image();
-        img.onload = () => console.log(`✅ Imagen ${index + 1} cargada:`, imageUrl);
-        img.onerror = () => console.error(`❌ Error cargando imagen ${index + 1}:`, imageUrl);
-        img.src = imageUrl;
-      }
+      
     });
   });
 </script>

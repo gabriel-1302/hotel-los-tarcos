@@ -26,7 +26,7 @@ def galeria(request):
     try:
         if os.path.exists(image_path):
             # Filtrar solo archivos de imagen
-            allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'}
+            allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp', '.avif'}
             image_names = [
                 f for f in os.listdir(image_path) 
                 if os.path.isfile(os.path.join(image_path, f)) and 
