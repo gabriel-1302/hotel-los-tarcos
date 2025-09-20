@@ -20,23 +20,58 @@ def reservas(request):
     return render(request, 'core/reservas.html')
 
 def galeria(request):
-    image_path = os.path.join(settings.BASE_DIR, 'core', 'static', 'images', 'galeria')
-    image_names = []
+    base_static_path = os.path.join(settings.BASE_DIR, 'core', 'static', 'images')
     
+    # Videos
+    video_path = os.path.join(base_static_path, 'video')
+    video_names = []
+    allowed_video_extensions = {'.mp4', '.avi', '.mov', '.wmv', '.mkv', '.webm'}
     try:
-        if os.path.exists(image_path):
-            # Filtrar solo archivos de imagen
-            allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp', '.avif'}
-            image_names = [
-                f for f in os.listdir(image_path) 
-                if os.path.isfile(os.path.join(image_path, f)) and 
-                os.path.splitext(f.lower())[1] in allowed_extensions
+        if os.path.exists(video_path):
+            video_names = [
+                f for f in os.listdir(video_path)
+                if os.path.isfile(os.path.join(video_path, f)) and
+                os.path.splitext(f.lower())[1] in allowed_video_extensions
             ]
     except OSError:
-        # Manejar errores de permisos o directorio no accesible
         pass
-    
-    return render(request, 'core/galeria.html', {'image_names': image_names})
+
+    # Imágenes de galería
+    galeria_path = os.path.join(base_static_path, 'galeria')
+    galeria_images = []
+    allowed_image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif'}
+    try:
+        if os.path.exists(galeria_path):
+            galeria_images = [
+                f for f in os.listdir(galeria_path)
+                if os.path.isfile(os.path.join(galeria_path, f)) and
+                os.path.splitext(f.lower())[1] in allowed_image_extensions
+            ]
+    except OSError:
+        pass
+
+    # Imágenes de huéspedes
+    huespedes_path = os.path.join(base_static_path, 'huespedes')
+    huespedes_images = []
+    try:
+        if os.path.exists(huespedes_path):
+            huespedes_images = [
+                f for f in os.listdir(huespedes_path)
+                if os.path.isfile(os.path.join(huespedes_path, f)) and
+                os.path.splitext(f.lower())[1] in allowed_image_extensions
+            ]
+    except OSError:
+        pass
+
+    return render(request, 'core/galeria.html', {
+        'video_names': video_names,
+        'galeria_images': galeria_images,
+        'huespedes_images': huespedes_images
+    })
+
+
+
+
 
 def paquetes(request):
     return render(request, 'core/paquetes.html')

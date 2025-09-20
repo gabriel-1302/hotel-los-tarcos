@@ -17,7 +17,12 @@ urlpatterns = [
 
     path('servicios/', views.servicios, name='servicios'),
     path('reservas/', views.reservas, name='reservas'),
+
+    #galeria y diviciones
     path('galeria/', views.galeria, name='galeria'),
+
+
+    
     path('paquetes/', views.paquetes, name='paquetes'),
 
     path('api/google-reviews/', views.get_google_reviews, name='google_reviews'),
