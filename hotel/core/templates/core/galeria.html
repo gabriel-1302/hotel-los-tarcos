@@ -192,12 +192,24 @@
 <!-- Video Section -->
 {% if video_names %}
 <div class="video-container">
-  <video autoplay loop muted>
+  <video id="bg-video" autoplay loop muted playsinline style="display:none;">
+    <source src="{% static 'images/video/' %}{{ video_names.0|cut:".mp4" }}.webm" type="video/webm">
     <source src="{% static 'images/video/' %}{{ video_names.0 }}" type="video/mp4">
     Tu navegador no soporta la etiqueta de video.
   </video>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("bg-video");
+    video.addEventListener("canplaythrough", () => {
+      video.style.display = "block"; // mostrar video cuando esté listo
+    });
+  });
+</script>
 {% endif %}
+
+
 
 <!-- Imágenes del Hotel -->
 {% if galeria_images %}
@@ -215,7 +227,7 @@
 {% if huespedes_images %}
 <div class="gallery-section">
   <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 text-center mb-6">Huespedes</h2>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 text-center mb-6">Huéspedes</h2>
     <div class="grid" id="huespedesGrid"></div>
   </div>
 </div>
